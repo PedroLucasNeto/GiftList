@@ -1,23 +1,27 @@
-import "./App.scss";
-import Contact from "./components/contact/Contact";
-import Header from "./components/header/Header";
-import AboutUs from "./pages/aboutUs/AboutUs";
-import Home from "./pages/home/Home";
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Home from './Pages/Home';
+import NotFound from './Pages/NotFound';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+import { Contact } from './components/Contact';
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/about-us" element={<AboutUs />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path='*' element={<NotFound />} />
+        <Route path='/'>
+          <Route path='/' element={<Home />} />
+          <Route path='/*' element={<NotFound />} />
+          <Route path='notFound' element={<NotFound />} />
+          <Route path='/contact' element={<Contact />} />
+          {/* <Route path='/categories' element={<Categories />} /> */}
+        </Route>
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
