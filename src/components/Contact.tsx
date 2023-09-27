@@ -23,15 +23,6 @@ export const Contact = () => {
             </Link>
           </div>
         </div>
-        <div className='bg-gray-100 flex-col p-10 rounded-xl w-80 h-44'>
-          <h6 className='text-3xl font-semibold tracking-tight text-gray-900 sm:text-xl pb-4'>
-            Entre em contato
-          </h6>
-          <a href='#' className='text-blue-700 font-semibold pb-4'>
-            email@email.com
-          </a>
-          <p className='text-gray-900'>+1 (555) 905-2345</p>
-        </div>
       </div>
     </>
   );
