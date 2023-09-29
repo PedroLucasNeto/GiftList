@@ -9,18 +9,18 @@ export const Contact = () => {
             Entre em contato
           </h2>
           <p className='mt-6 text-lg leading-8 text-white'>
-            Quam nunc nunc eu sed. Sed rhoncus quis ultricies ac pellentesque.
+            Fale com nossos especialistas pelos seguintes meios.
           </p>
           <div className='mt-10 flex items-center justify-center gap-x-6 lg:justify-start'>
+            <Link to='/' className='text-sm font-semibold leading-6 text-white'>
+              ←<span aria-hidden='true'> Voltar</span>
+            </Link>
             <a
               href='#'
-              className='rounded-md bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+              className='rounded-md bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
             >
               WhatsApp
             </a>
-            <Link to='/' className='text-sm font-semibold leading-6 text-white'>
-              Início <span aria-hidden='true'>→</span>
-            </Link>
           </div>
         </div>
       </div>

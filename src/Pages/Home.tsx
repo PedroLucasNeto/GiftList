@@ -1,14 +1,13 @@
-import { Routes, Route } from 'react-router-dom';
-
-import NotFound from './NotFound';
 import Services from '../components/Services';
 import Cta from '../components/Cta';
+import MainContent from '../components/MainContent';
 
 const Home = () => {
   return (
     <>
-      <Services />
       <Cta />
+      <Services />
+      <MainContent />
     </>
   );
 };

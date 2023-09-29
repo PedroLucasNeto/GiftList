@@ -1,52 +1,54 @@
 import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
+  UserGroupIcon,
+  CogIcon,
+  MagnifyingGlassIcon,
+  ChevronDoubleUpIcon,
+  StarIcon,
 } from '@heroicons/react/24/outline';
 
 const features = [
   {
-    name: 'Push to deploy',
+    name: 'Diagnóstico Organizacional',
     description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-    icon: CloudArrowUpIcon,
+      'É o primeiro passo para entender a saúde da sua empresa. Realizamos uma análise abrangente, identificando pontos fortes e áreas que precisam de melhorias.',
+    icon: MagnifyingGlassIcon,
   },
   {
-    name: 'SSL certificates',
+    name: 'Treinamento Comportamental',
     description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: LockClosedIcon,
+      'Projetado para aprimorar as habilidades interpessoais e de comunicação dos seus funcionários. Nossos programas abordam temas como resolução de conflitos, empatia, trabalho em equipe e liderança.',
+    icon: CogIcon,
   },
   {
-    name: 'Simple queues',
+    name: 'Desenvolvimento de Lideranças',
     description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: ArrowPathIcon,
+      'Nosso Desenvolvimento de Lideranças visa fortalecer a capacidade de liderança em sua organização.',
+    icon: StarIcon,
   },
   {
-    name: 'Advanced security',
+    name: 'Orientação Profissional',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: FingerPrintIcon,
+      'Oferecemos orientação profissional personalizada para indivíduos em busca de clareza em suas carreiras.',
+    icon: UserGroupIcon,
   },
 ];
 
 export default function Services() {
   return (
-    <div className='bg-white py-24 sm:py-32'>
+    <div id='services' className='bg-white py-24 sm:py-32'>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
         <div className='mx-auto max-w-2xl lg:text-center'>
           <h2 className='text-base font-semibold leading-7 text-indigo-600'>
-            Deploy faster
+            Principais Serviços
           </h2>
           <p className='mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
-            Everything you need to deploy your app
+            Tudo o que você precisa para impulsionar sua empresa
           </p>
           <p className='mt-6 text-lg leading-8 text-gray-600'>
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-            Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
-            In mi viverra elit nunc.
+            Oferecemos soluções personalizadas para atender às necessidades
+            únicas da sua organização. Nossa consultoria está aqui para ajudá-lo
+            a alcançar seus objetivos de recursos humanos e sucesso
+            organizacional.
           </p>
         </div>
         <div className='mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl'>
