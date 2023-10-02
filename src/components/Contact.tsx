@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
+import { Card } from './Card';
 
 export const Contact = () => {
   return (
     <>
-      <div className='flex'>
-        <div className='mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left bg-gray-900 p-8'>
+      <div className='flex flex-wrap gap-4 bg-gray-100 border-t-gray-100'>
+        <div className='w-full sm:w-full lg:w-80 xl:w-80 mx-auto text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left bg-gray-900 p-8'>
           <h2 className='text-3xl font-bold tracking-tight text-white sm:text-4xl'>
             Entre em contato
           </h2>
@@ -22,6 +23,34 @@ export const Contact = () => {
               WhatsApp
             </a>
           </div>
+        </div>
+        <div className='flex flex-wrap place-content-center p-8 gap-4 '>
+          <Card
+            title='Carlos Santos'
+            key={1}
+            email='email@email.com'
+            location=''
+            phone='(83) 9 9810-7584'
+          />
+          <Card
+            title='Pedro Lucas'
+            key={1}
+            email='pedrolukasneto@gmail.com'
+            location=''
+            phone='(83) 9 9810-7584'
+          />
+          <Card
+            title='Localização'
+            key={1}
+            email=''
+            location='Rua João Machado, 267 - Prata, Campina Grande - PB, 58400-510'
+            phone=''
+          />
+          <Card
+            title='Redes Sociais'
+            key={1}
+            socialMidia='Instagram: @CarlosSantos Facebook: @CarlosSantos'
+          />
         </div>
       </div>
     </>

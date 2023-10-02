@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { Disclosure } from "@headlessui/react";
-import { useState } from "react";
+import { Link } from 'react-router-dom';
+import { Disclosure } from '@headlessui/react';
+import { useState } from 'react';
 
 interface Items {
   name: string;
@@ -10,14 +10,14 @@ interface Items {
 
 export default function NavBar() {
   const navigation: Items[] = [
-    { name: "Início", to: "/home", current: true }, // Defina o estado inicial para 'false'
-    { name: "Serviços", to: "/home#services", current: false },
-    { name: "Contato", to: "/contact", current: false },
+    { name: 'Início', to: '/home', current: false }, // Defina o estado inicial para 'false'
+    { name: 'Serviços', to: '/home#services', current: false },
+    { name: 'Contato', to: '/contact', current: false },
   ];
   const [navItems, setNavItems] = useState(navigation);
 
   function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(" ");
+    return classes.filter(Boolean).join(' ');
   }
 
   function handleNavItemClick(current: string) {
@@ -29,13 +29,13 @@ export default function NavBar() {
   }
 
   return (
-    <Disclosure as="nav" className="bg-blue-700">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
-        <div className="flex h-16 justify-between items-center w-100">
-          <div className="">
-            <p className="text-sky-50 text-white">CGRH</p>
+    <Disclosure as='nav' className='bg-white border-gray-100 border-b-2'>
+      <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 '>
+        <div className='flex h-16 justify-between items-center w-100'>
+          <div className=''>
+            <p className='text-gray-900'>CGRH</p>
           </div>
-          <div className="flex space-x-4">
+          <div className='flex space-x-4'>
             {navItems.map((item) => (
               <a
                 onClick={() => handleNavItemClick(item.name)}
@@ -43,11 +43,11 @@ export default function NavBar() {
                 href={item.to}
                 className={classNames(
                   item.current
-                    ? "bg-blue-900 text-white"
-                    : "text-gray-300 hover:bg-blue-800 hover:text-white",
-                  "rounded-md px-3 py-2 text-sm font-medium"
+                    ? 'bg-gray-400 text-gray-900'
+                    : 'text-gray-300 hover:bg-gray-400 hover:text-gray-900',
+                  'rounded-md px-3 py-2 text-sm font-medium text-gray-900'
                 )}
-                aria-current={item.current ? "page" : undefined}
+                aria-current={item.current ? 'page' : undefined}
               >
                 {item.name}
               </a>
