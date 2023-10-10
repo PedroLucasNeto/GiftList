@@ -6,7 +6,7 @@ export const Contact = () => {
   return (
     <>
       <div>
-        <div className='flex flex-wrap lg:flex-nowrap gap-4 bg-gray-100 border-t-gray-100 '>
+        <div className='flex flex-wrap lg:flex-nowrap gap-4 bg-gray-100 border-t-gray-100 min-h-screen'>
           <div className='w-full lg:w-7/12 mx-auto text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left bg-gray-900 p-8'>
             <h2 className='text-3xl font-bold tracking-tight text-white sm:text-4xl'>
               Entre em contato

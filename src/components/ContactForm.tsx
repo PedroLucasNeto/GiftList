@@ -13,10 +13,9 @@
   ```
 */
 import { useState } from 'react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { Switch } from '@headlessui/react';
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
@@ -24,28 +23,20 @@ export default function ContactForm() {
   const [agreed, setAgreed] = useState(false);
 
   return (
-    <div className='bg-gray-100 px-6 lg:px-8'>
-      <div className='overflow-hidden blur-3xl' aria-hidden='true'>
-        <div
-          className='left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]'
-          style={{
-            clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-          }}
-        />
-      </div>
+    <div className='bg-gray-100 px-6 lg:px-8 py-8'>
+      <div className='overflow-hidden blur-3xl'></div>
       <div className='mx-auto max-w-2xl text-center'>
         <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
-          Contact sales
+          Enviar Mensagem
         </h2>
         <p className='mt-2 text-lg leading-8 text-gray-600'>
-          Aute magna irure deserunt veniam aliqua magna enim voluptate.
+          Envie sua mensagem diretamente para nosso email
         </p>
       </div>
       <form
         action='#'
         method='POST'
-        className='mx-auto mt-16 max-w-xl sm:mt-20'
+        className='mx-auto mt-16 max-w-xl sm:mt-10'
       >
         <div className='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2'>
           <div>
@@ -53,7 +44,7 @@ export default function ContactForm() {
               htmlFor='first-name'
               className='block text-sm font-semibold leading-6 text-gray-900'
             >
-              First name
+              Nome
             </label>
             <div className='mt-2.5'>
               <input
@@ -70,7 +61,7 @@ export default function ContactForm() {
               htmlFor='last-name'
               className='block text-sm font-semibold leading-6 text-gray-900'
             >
-              Last name
+              Sobrenome
             </label>
             <div className='mt-2.5'>
               <input
@@ -87,7 +78,7 @@ export default function ContactForm() {
               htmlFor='company'
               className='block text-sm font-semibold leading-6 text-gray-900'
             >
-              Company
+              Empresa
             </label>
             <div className='mt-2.5'>
               <input
@@ -121,7 +112,7 @@ export default function ContactForm() {
               htmlFor='phone-number'
               className='block text-sm font-semibold leading-6 text-gray-900'
             >
-              Phone number
+              Número de Telefone
             </label>
             <div className='relative mt-2.5'>
               <div className='absolute inset-y-0 left-0 flex items-center'>
@@ -133,14 +124,10 @@ export default function ContactForm() {
                   name='country'
                   className='h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm'
                 >
+                  <option>BR</option>
                   <option>US</option>
-                  <option>CA</option>
                   <option>EU</option>
                 </select>
-                <ChevronDownIcon
-                  className='pointer-events-none absolute right-3 top-0 h-full w-5 text-gray-400'
-                  aria-hidden='true'
-                />
               </div>
               <input
                 type='tel'
@@ -156,7 +143,7 @@ export default function ContactForm() {
               htmlFor='message'
               className='block text-sm font-semibold leading-6 text-gray-900'
             >
-              Message
+              Mensagem
             </label>
             <div className='mt-2.5'>
               <textarea
@@ -189,9 +176,9 @@ export default function ContactForm() {
               </Switch>
             </div>
             <Switch.Label className='text-sm leading-6 text-gray-600'>
-              By selecting this, you agree to our{' '}
+              Ao selecionar este campo você concorda com nossa{' '}
               <a href='#' className='font-semibold text-indigo-600'>
-                privacy&nbsp;policy
+                política de&nbsp;privacidade
               </a>
               .
             </Switch.Label>
@@ -202,7 +189,7 @@ export default function ContactForm() {
             type='submit'
             className='block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
           >
-            Let's talk
+            Enviar
           </button>
         </div>
       </form>

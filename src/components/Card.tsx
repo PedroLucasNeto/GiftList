@@ -15,7 +15,7 @@ export const Card = ({
 }: CardProps) => {
   return (
     <>
-      <div className='bg-gray-100 flex-col p-10 rounded-xl w-80 h-44 shadow-lg shadow-gray-500/50'>
+      <div className='bg-gray-100 flex-col p-10 rounded-xl w-80 h-44 shadow-lg shadow-gray-500/50 hover:scale-105 ease-in-out duration-300'>
         <h6 className='text-3xl font-semibold tracking-tight text-gray-900 sm:text-xl pb-4'>
           {title}
         </h6>
