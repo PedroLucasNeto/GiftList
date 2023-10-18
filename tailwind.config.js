@@ -4,7 +4,14 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        'darkblue': '#111827',
+      },
+      textColor: {
+        'darkblue': '#111827',
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/aspect-ratio', '@tailwindcss/forms'),

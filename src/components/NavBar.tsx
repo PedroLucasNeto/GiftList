@@ -28,11 +28,11 @@ export default function NavBar() {
   }
 
   return (
-    <Disclosure as='nav' className='bg-white border-gray-100 border-b-2'>
+    <Disclosure as='nav' className='bg-darkblue border-gray-100 border-b-2 '>
       <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 '>
         <div className='flex h-16 justify-between items-center w-100'>
           <div className=''>
-            <p className='text-gray-900'>CGRH</p>
+            <p className='text-gray-50'>CGRH</p>
           </div>
           <div className='flex space-x-4'>
             {navItems.map((item) => (
@@ -42,9 +42,9 @@ export default function NavBar() {
                 href={item.to}
                 className={classNames(
                   item.current
-                    ? 'bg-gray-400 text-gray-900'
-                    : 'text-gray-300 hover:bg-gray-400 hover:text-gray-900',
-                  'rounded-md px-3 py-2 text-sm font-medium text-gray-900'
+                    ? 'bg-gray-400 text-gray-50'
+                    : 'text-gray-300 hover:bg-sky-50 hover:text-darkblue',
+                  'rounded-md px-3 py-2 text-sm font-medium text-gray-50'
                 )}
                 aria-current={item.current ? 'page' : undefined}
               >
