@@ -80,7 +80,7 @@ export default function NavBar() {
   }
 
   return (
-    <Disclosure as="nav" className="bg-white border-gray-100 border-b-2">
+    <Disclosure as="nav" className="bg-darkblue border-gray-100 border-b-2">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
         <div className="flex h-16 justify-between items-center w-100">
           <div className="">
@@ -90,26 +90,23 @@ export default function NavBar() {
             {navItems.map((item) => (
               <div
                 key={item.name}
-                className=""
+                className="text-white"
                 onMouseEnter={() => toggleSubmenu(item)}
                 // onMouseLeave={() => toggleSubmenu(item)}
               >
                 <button
                   onClick={() => toggleSubmenu(item)}
-                  className="focus:outline-none"
+                  className="focus:outline-none "
                 >
                   {item.name}
                 </button>
                 {item.isSubmenuOpen && (
-                  <div
-                    className="transition ease-in-out delay-150  space-y-2 min-w-32 bg-white border border-gray-200 divide-y rounded-md shadow-lg z-10 absolute top-10"
-                    // style={{ top: "100%" }}
-                  >
+                  <div className="transition ease-in-out delay-150 border border-white rounded-md min-w-32 bg-white divide-y shadow-lg z-10 absolute top-11">
                     {item.composedItems.map((childItem) => (
                       <a
                         key={childItem.name}
                         href={childItem.to}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-darkblue "
+                        className="block px-4 py-2 text-sm text-darkblue hover:text-white hover:bg-darkblue border border-white rounded-md"
                       >
                         {childItem.name}
                       </a>
