@@ -46,7 +46,7 @@ export default function MainContent() {
                 Não se preocupe!
               </p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Nós entendemos sua necessidade
+                Nós entendemos a(s) sua(s) necessidade(s)
               </h1>
               <p className="mt-6 text-xl leading-8 text-gray-700">
                 Desde o início, estabelecemos nossa missão de ser o parceiro

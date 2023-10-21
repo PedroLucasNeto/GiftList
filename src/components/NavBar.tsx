@@ -109,7 +109,7 @@ export default function NavBar() {
                       <a
                         key={childItem.name}
                         href={childItem.to}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-darkblue"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-darkblue "
                       >
                         {childItem.name}
                       </a>
