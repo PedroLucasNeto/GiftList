@@ -1,5 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 type Items = {
   name: string;
@@ -8,54 +9,61 @@ type Items = {
   composedItems: Array<Items>;
   isSubmenuOpen: boolean;
 };
+const navigation: Items[] = [
+  {
+    name: "Início",
+    to: "/home",
+    current: false,
+    composedItems: [],
+    isSubmenuOpen: false,
+  },
+  {
+    name: "Serviços",
+    to: "/home#services",
+    current: false,
+    composedItems: [
+      {
+        name: "Diagnóstico",
+        to: "/home#services",
+        current: false,
+        composedItems: [],
+        isSubmenuOpen: false,
+      },
+      {
+        name: "Test",
+        to: "/home#services",
+        current: false,
+        composedItems: [],
+        isSubmenuOpen: false,
+      },
+    ],
+    isSubmenuOpen: false,
+  },
+  {
+    name: "Contato",
+    to: "/contact",
+    current: false,
+    composedItems: [],
+    isSubmenuOpen: false,
+  },
+  {
+    name: "Mais",
+    to: "/contact",
+    current: false,
+    composedItems: [
+      {
+        name: "Política de Privacidade",
+        to: "/home#services",
+        current: false,
+        composedItems: [],
+        isSubmenuOpen: false,
+      },
+    ],
+    isSubmenuOpen: false,
+  },
+];
 
 export default function NavBar() {
-  const navigation: Items[] = [
-    {
-      name: "Início",
-      to: "/home",
-      current: false,
-      composedItems: [],
-      isSubmenuOpen: false,
-    },
-    {
-      name: "Serviços",
-      to: "/home#services",
-      current: false,
-      composedItems: [
-        {
-          name: "Diagnóstico",
-          to: "/home#services",
-          current: false,
-          composedItems: [],
-          isSubmenuOpen: false,
-        },
-        {
-          name: "Diagnóstico",
-          to: "/home#services",
-          current: false,
-          composedItems: [],
-          isSubmenuOpen: false,
-        },
-      ],
-      isSubmenuOpen: false,
-    },
-    {
-      name: "Contato",
-      to: "/contact",
-      current: false,
-      composedItems: [],
-      isSubmenuOpen: false,
-    },
-    {
-      name: "Mais",
-      to: "/contact",
-      current: false,
-      composedItems: [],
-      isSubmenuOpen: false,
-    },
-  ];
-
   const [navItems, setNavItems] = useState(navigation);
 
   // function classNames(...classes: string[]) {
@@ -86,22 +94,23 @@ export default function NavBar() {
           <div className="">
             <p className="text-gray-900">CGRH</p>
           </div>
-          <div className="flex space-x-4 inline">
+          <div className="flex space-x-4">
             {navItems.map((item) => (
               <div
                 key={item.name}
-                className="text-white"
+                className="text-white w-32 text-center"
                 onMouseEnter={() => toggleSubmenu(item)}
                 // onMouseLeave={() => toggleSubmenu(item)}
               >
-                <button
-                  onClick={() => toggleSubmenu(item)}
-                  className="focus:outline-none "
+                <Link
+                  to={item.to}
+                  // onClick={() => toggleSubmenu(item)}
+                  className="focus:outline-none"
                 >
                   {item.name}
-                </button>
+                </Link>
                 {item.isSubmenuOpen && (
-                  <div className="transition ease-in-out delay-150 border border-white rounded-md min-w-32 bg-white divide-y shadow-lg z-10 absolute top-11">
+                  <div className="transition ease-in-out delay-150 border border-white rounded-md w-32 bg-white divide-y shadow-lg z-10 absolute top-11">
                     {item.composedItems.map((childItem) => (
                       <a
                         key={childItem.name}

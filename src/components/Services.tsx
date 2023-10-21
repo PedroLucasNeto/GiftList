@@ -55,10 +55,10 @@ export default function Services() {
               <Link
                 to={""}
                 key={feature.name}
-                className="relative pl-16 group p-2 hover:bg-blue-900 border border-white rounded-xl cursor-pointer"
+                className="relative pl-16 group p-4 hover:bg-blue-900 border border-white rounded-xl cursor-pointer"
               >
                 <dt className="text-base font-semibold leading-7 text-gray-900 group-hover:text-white ">
-                  <div className="absolute left-2 top-3 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-900 group-hover:bg-white ">
+                  <div className="absolute left-2 top-5 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-900 group-hover:bg-white ">
                     <feature.icon
                       className="h-6 w-6 text-white group-hover:text-white group-hover:text-blue-900"
                       aria-hidden="true"
