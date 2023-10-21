@@ -2,7 +2,6 @@ import {
   UserGroupIcon,
   CogIcon,
   MagnifyingGlassIcon,
-  ChevronDoubleUpIcon,
   StarIcon,
 } from "@heroicons/react/24/outline";
 
