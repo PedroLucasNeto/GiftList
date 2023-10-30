@@ -1,6 +1,6 @@
-import { Disclosure } from "@headlessui/react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Disclosure } from '@headlessui/react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 type Items = {
   name: string;
@@ -11,27 +11,27 @@ type Items = {
 };
 const navigation: Items[] = [
   {
-    name: "Início",
-    to: "/home",
+    name: 'Início',
+    to: '/home',
     current: false,
     composedItems: [],
     isSubmenuOpen: false,
   },
   {
-    name: "Serviços",
-    to: "/home#services",
+    name: 'Serviços',
+    to: '/home#services',
     current: false,
     composedItems: [
       {
-        name: "Diagnóstico",
-        to: "/home#services",
+        name: 'Diagnóstico',
+        to: '/home#services',
         current: false,
         composedItems: [],
         isSubmenuOpen: false,
       },
       {
-        name: "Test",
-        to: "/home#services",
+        name: 'Test',
+        to: '/home#services',
         current: false,
         composedItems: [],
         isSubmenuOpen: false,
@@ -40,20 +40,20 @@ const navigation: Items[] = [
     isSubmenuOpen: false,
   },
   {
-    name: "Contato",
-    to: "/contact",
+    name: 'Contato',
+    to: '/contact',
     current: false,
     composedItems: [],
     isSubmenuOpen: false,
   },
   {
-    name: "Mais",
-    to: "/contact",
+    name: 'Mais',
+    to: '/contact',
     current: false,
     composedItems: [
       {
-        name: "Política de Privacidade",
-        to: "/home#services",
+        name: 'Política de Privacidade',
+        to: '/home#services',
         current: false,
         composedItems: [],
         isSubmenuOpen: false,
@@ -88,34 +88,34 @@ export default function NavBar() {
   }
 
   return (
-    <Disclosure as="nav" className="bg-darkblue border-gray-100 border-b-2">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
-        <div className="flex h-16 justify-between items-center w-100">
-          <div className="">
-            <p className="text-gray-900">CGRH</p>
+    <Disclosure as='nav' className='bg-darkblue border-gray-100 border-b-2'>
+      <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 '>
+        <div className='flex h-16 justify-between items-center w-100'>
+          <div className=''>
+            <p className='text-gray-900'>CGRH</p>
           </div>
-          <div className="flex space-x-4">
+          <div className='flex space-x-4'>
             {navItems.map((item) => (
               <div
                 key={item.name}
-                className="text-white w-32 text-center"
+                className='text-white w-32 text-center'
                 onMouseEnter={() => toggleSubmenu(item)}
                 // onMouseLeave={() => toggleSubmenu(item)}
               >
                 <Link
                   to={item.to}
                   // onClick={() => toggleSubmenu(item)}
-                  className="focus:outline-none"
+                  className='focus:outline-none'
                 >
                   {item.name}
                 </Link>
                 {item.isSubmenuOpen && (
-                  <div className="transition ease-in-out delay-150 border border-white rounded-md w-32 bg-white divide-y shadow-lg z-10 absolute top-11">
+                  <div className='transition ease-in-out delay-150 rounded-md w-32 bg-white divide-y shadow-lg z-10 absolute top-11'>
                     {item.composedItems.map((childItem) => (
                       <a
                         key={childItem.name}
                         href={childItem.to}
-                        className="block px-4 py-2 text-sm text-darkblue hover:text-white hover:bg-darkblue border border-white rounded-md"
+                        className='block px-4 py-2 text-sm text-darkblue hover:text-blue-900 border border-white rounded-md'
                       >
                         {childItem.name}
                       </a>
