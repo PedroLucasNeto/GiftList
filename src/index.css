@@ -2,3 +2,17 @@ html {
   scroll-behavior: smooth;
 }
 
+.rs-dropdown-item {
+  white-space: wrap !important;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.rs-navbar{
+  background-color: #111827!important;
+  color: white;
+}
+
+.rs-navbar-brand{
+  padding: 10px 20px;
+}

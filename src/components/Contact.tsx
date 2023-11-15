@@ -45,12 +45,12 @@ export const Contact = () => {
   return (
     <>
       <div>
-        <div className="flex flex-wrap lg:flex-nowrap gap-4 bg-gray-100 border-t-gray-100 min-h-screen">
-          <div className="w-full lg:w-7/12 mx-auto text-center lg:mx-0 lg:flex-auto lg:text-center bg-gray-900 p-8">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <div className="flex flex-wrap lg:flex-nowrap gap-4 border-t-gray-100 min-h-screen ">
+          <div className=" w-full  text-center  lg:flex-auto lg:text-center  p-8 lg:mx-60">
+            <h2 className="text-3xl font-bold tracking-tight text-darkblue sm:text-4xl">
               Entre em contato
             </h2>
-            <p className="mt-6 text-lg leading-8 text-white">
+            <p className="mt-6 text-lg leading-8 text-darkblue">
               Fale com nossos especialistas pelos seguintes meios.
             </p>
             <div className="flex flex-wrap place-content-center p-2 gap-4 mt-8">
@@ -69,13 +69,13 @@ export const Contact = () => {
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-center">
               <Link
                 to="/"
-                className="text-sm font-semibold leading-6 text-white"
+                className="text-sm font-semibold leading-6 text-darkblue"
               >
                 ←<span aria-hidden="true"> Voltar</span>
               </Link>
               <a
                 href="#"
-                className="rounded-md bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="rounded-md bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-darkblue shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 WhatsApp
               </a>

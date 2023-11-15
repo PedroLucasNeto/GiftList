@@ -12,24 +12,28 @@ const features = [
     description:
       "É o primeiro passo para entender a saúde da sua empresa. Realizamos uma análise abrangente, identificando pontos fortes e áreas que precisam de melhorias.",
     icon: MagnifyingGlassIcon,
+    link: "/services/diagnostico",
   },
   {
     name: "Treinamento Comportamental",
     description:
       "Projetado para aprimorar as habilidades interpessoais e de comunicação dos seus funcionários. Nossos programas abordam temas como resolução de conflitos, empatia, trabalho em equipe e liderança.",
     icon: CogIcon,
+    link: "/services/treinamento-comportamental",
   },
   {
     name: "Desenvolvimento de Lideranças",
     description:
       "Nosso programa de formação de líderes visa desenvolver estrategicamente os talentos da sua empresa, alinhando ciência e técnica na busca do melhor desenvolvimento profissional para os colaboradores.",
     icon: StarIcon,
+    link: "/services/desenvolvimento-liderancas",
   },
   {
     name: "Orientação Profissional",
     description:
       "Oferecemos orientação profissional personalizada para indivíduos em busca de clareza em suas carreiras.",
     icon: UserGroupIcon,
+    link: "/services/orientacao-profissional",
   },
 ];
 
@@ -53,20 +57,24 @@ export default function Services() {
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
             {features.map((feature) => (
               <Link
-                to={""}
+                to={feature.link}
                 key={feature.name}
-                className="relative pl-16 group p-4 hover:bg-blue-900 border border-white rounded-xl cursor-pointer"
+                className="transition ease-in-out delay-150 relative pl-16 group p-4 hover:bg-blue-900 border 
+                hover:border-white shadow-md rounded-xl cursor-pointer"
               >
-                <dt className="text-base font-semibold leading-7 text-gray-900 group-hover:text-white ">
-                  <div className="absolute left-2 top-5 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-900 group-hover:bg-white ">
+                <dt className="transition ease-in-out text-base font-semibold leading-7 text-gray-900 group-hover:text-white ">
+                  <div
+                    className="transition ease-in-out absolute left-4 top-5 flex h-10 w-10 items-center justify-center rounded-lg
+                   bg-blue-900 group-hover:bg-white "
+                  >
                     <feature.icon
-                      className="h-6 w-6 text-white group-hover:text-white group-hover:text-blue-900"
+                      className="h-6 w-6 text-white transition ease-in-out  group-hover:text-blue-900"
                       aria-hidden="true"
                     />
                   </div>
                   {feature.name}
                 </dt>
-                <dd className="mt-2 text-base leading-7 text-gray-600 group-hover:text-white ">
+                <dd className="transition ease-in-out mt-2 text-base leading-7 text-gray-600 group-hover:text-white ">
                   {feature.description}
                 </dd>
               </Link>
