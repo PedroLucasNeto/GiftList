@@ -52,7 +52,7 @@ export default function NavBarContent() {
   const [navItems] = useState(itemsOrder.map((index) => navigation[index]));
 
   return (
-    <Navbar className="pr-6 bg-darkblue">
+    <Navbar className="sm:pr-0 pr-6 bg-darkblue">
       <Navbar.Brand className="text-2xl font-semibold p-0" href="/">
         CGRH
       </Navbar.Brand>

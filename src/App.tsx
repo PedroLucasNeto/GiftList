@@ -7,6 +7,7 @@ import { Contact } from "./components/Contact";
 import NavBarContent from "./components/NavBarContent";
 import "rsuite/dist/rsuite.min.css";
 import { PrivacyPolicy } from "./Pages/PrivacyPolicy";
+import { SpecificService } from "./Pages/SpecificService";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="notFound" element={<NotFound />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/services/*" element={<SpecificService />} />
         </Routes>
         <Footer />
       </BrowserRouter>

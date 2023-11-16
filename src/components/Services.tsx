@@ -1,41 +1,5 @@
-import {
-  UserGroupIcon,
-  CogIcon,
-  MagnifyingGlassIcon,
-  StarIcon,
-} from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-
-const features = [
-  {
-    name: "Diagnóstico Organizacional",
-    description:
-      "É o primeiro passo para entender a saúde da sua empresa. Realizamos uma análise abrangente, identificando pontos fortes e áreas que precisam de melhorias.",
-    icon: MagnifyingGlassIcon,
-    link: "/services/diagnostico",
-  },
-  {
-    name: "Treinamento Comportamental",
-    description:
-      "Projetado para aprimorar as habilidades interpessoais e de comunicação dos seus funcionários. Nossos programas abordam temas como resolução de conflitos, empatia, trabalho em equipe e liderança.",
-    icon: CogIcon,
-    link: "/services/treinamento-comportamental",
-  },
-  {
-    name: "Desenvolvimento de Lideranças",
-    description:
-      "Nosso programa de formação de líderes visa desenvolver estrategicamente os talentos da sua empresa, alinhando ciência e técnica na busca do melhor desenvolvimento profissional para os colaboradores.",
-    icon: StarIcon,
-    link: "/services/desenvolvimento-liderancas",
-  },
-  {
-    name: "Orientação Profissional",
-    description:
-      "Oferecemos orientação profissional personalizada para indivíduos em busca de clareza em suas carreiras.",
-    icon: UserGroupIcon,
-    link: "/services/orientacao-profissional",
-  },
-];
+import { services } from "../types/Services";
 
 export default function Services() {
   return (
@@ -55,10 +19,10 @@ export default function Services() {
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16 ">
-            {features.map((feature) => (
+            {services.map((service) => (
               <Link
-                to={feature.link}
-                key={feature.name}
+                to={service.link}
+                key={service.name}
                 className="transition ease-in-out delay-150 relative pl-16 group p-4 hover:bg-blue-900 border 
                 hover:border-white shadow-md rounded-xl cursor-pointer"
               >
@@ -67,15 +31,15 @@ export default function Services() {
                     className="transition ease-in-out absolute left-4 top-5 flex h-10 w-10 items-center justify-center rounded-lg
                    bg-blue-900 group-hover:bg-white "
                   >
-                    <feature.icon
+                    <service.icon
                       className="h-6 w-6 text-white transition ease-in-out  group-hover:text-blue-900"
                       aria-hidden="true"
                     />
                   </div>
-                  {feature.name}
+                  {service.name}
                 </dt>
                 <dd className="transition ease-in-out mt-2 text-base leading-7 text-gray-600 group-hover:text-white ">
-                  {feature.description}
+                  {service.description}
                 </dd>
               </Link>
             ))}
