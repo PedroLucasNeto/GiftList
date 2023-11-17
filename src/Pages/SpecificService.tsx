@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { useLocation /*useParams*/ } from "react-router-dom";
-import { services } from "../types/Services";
+import { useState, useEffect } from 'react';
+import { useLocation /*useParams*/ } from 'react-router-dom';
+import { services } from '../types/Services';
 
 export const SpecificService = () => {
   const location = useLocation();
@@ -18,13 +18,15 @@ export const SpecificService = () => {
     }
   }, [location.pathname]);
 
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
 
   return (
-    <div>
-      <h1>{title}</h1>
-      <p>{content}</p>
+    <div className='flex justify-center'>
+      <div className='min-h-screen text-justify min-h-full px-6 w-full lg:px-8 lg:max-w-1/2 xl:max-w-1/2 2xl:max-w-1/3 self-center my-12 '>
+        <h1 className='mb-2'>{title}</h1>
+        <p>{content}</p>
+      </div>
     </div>
   );
 };
