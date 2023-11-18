@@ -37,7 +37,7 @@ export const services = [
     icon: StarIcon,
     content:
       "Nosso programa de formação de líderes visa desenvolver estrategicamente os talentos da sua empresa, alinhando ciência e técnica na busca do melhor desenvolvimento profissional para os colaboradores.",
-    link: "services/desenvolvimento-de-liderancas",
+    link: "/services/desenvolvimento-de-liderancas",
     imgAlt: "DESENVOLVIMENTO",
     img: "./assets/images/desenvolvimento-de-liderancas.jpg",
     display: true,
@@ -49,7 +49,7 @@ export const services = [
     icon: UserGroupIcon,
     content:
       "A orientação profissional auxilia diretamente no plano de carreira, cargos e salários. Caso a empresa ainda não disponha de um planejamento salarial, a CGRH está apta a desenvolver o PCCS, seguindo todas as etapas e processos técnicos envolvidos. Com expertise de profissionais capacitados e mais de 15 anos na área de orientação de carreira, orientação profissional e PCCS, desenvolvemos um processo de estudo do perfil psicológico e das habilidades e competências necessárias à ocupação do cargo, transição ou crescimento ne carreira.",
-    link: "services/orientacao-profissional-carreira",
+    link: "/services/orientacao-profissional-carreira",
     imgAlt: "ORIENTAÇÃO",
     img: "./assets/images/orientaca-de-carreira.jpg",
     display: true,
@@ -121,7 +121,7 @@ export const services = [
     icon: "",
     content:
       "As pesquisas de clima organizacional têm a finalidade de levantar dados que revelem o moral da organização. Um clima organizacional positivo alavanca resultados e proporciona excelência nas relações com clientes e colaboradores. Os dados levantados são tratados e discutidos com a direção e, eventualmente, com as gerências de alto nível no sentido de determinar os fatores de ataque e desenvolvimento de um plano de ação na intervenção organizacional para alavancar os pontos fracos detectados. A participação de todos os colaboradores se torna essencial para a instalação de um clima sinérgico de participação e motivação rumo aos objetivos da empresa.",
-    link: "services/pesquisa-de-clima-organizacional",
+    link: "/services/pesquisa-de-clima-organizacional",
     imgAlt: "PESQUISA",
     img: "./assets/images/clima-organizacional.jpg",
     display: false,
@@ -133,7 +133,7 @@ export const services = [
     icon: "",
     content:
       "As palestras motivacionais têm a finalidade de despertar reflexões nos colaboradores, notadamente quando são dinâmicas e participativas. Nossas modalidades de palestras englobam ferramentas eletrônicas, digitais e de gestão de pessoas capazes de estimular a sua equipe de trabalho, seguindo as sinalizações fornecidas pela empresa. Podemos desenvolver virtualmente qualquer tema de interesse da sua organização com um mínimo de investimento e bom retorno motivacional para a sua empresa.",
-    link: "services/palestras-motivacionais",
+    link: "/services/palestras-motivacionais",
     imgAlt: "PALESTRAS",
     img: "./assets/images/palestras-motivacionais.jpg",
     display: false,
@@ -145,7 +145,7 @@ export const services = [
     icon: "",
     content:
       "A CGRH possui pessoal treinado para programas de cliente oculto. Esses programas visam inserir um observador para experimentar o serviço ou produto desejado, recolhendo as impressões previamente combinadas sobre o atendimento ou outro fator desejado. Esses programas são totalmente seguros e confidenciais, uma vez que seus resultados somente podem ser acessados pelas altas cúpulas administrativas ou gerenciais que os solicitaram. De posse dos dados das observações, medidas podem ser tomadas a fim de melhorar o atendimento ou a performance do serviço ou produto desejado.",
-    link: "services/cliente-oculto",
+    link: "/services/cliente-oculto",
     imgAlt: "CLIENTE",
     img: "./assets/images/cliente-oculto.jpg",
     display: false,
