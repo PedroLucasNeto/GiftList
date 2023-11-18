@@ -44,7 +44,7 @@ export const services = [
     content:
       'Atualmente, os processos de recrutamento e seleção de pessoas privilegiam o uso de ferramentas virtuais de captação e testagem. Estamos equipados para aplicação de testes, entrevistas, aplicação de dinâmicas e outros processos de forma virtual e/ou presencial, sempre garantindo os melhores resultados para a sua empresa. Nosso pessoal atua na captação e seleção de pessoas desde 2002 nos estados de Pernambuco, Paraíba, Rio Grande do Norte, Piauí e Maranhão. Conte com a nossa expertise em captação, seleção e contratação de pessoal.',
     icon: '',
-    link: '/services/',
+    link: '/services/recrutamento',
     display: false
   },
   {
@@ -52,7 +52,7 @@ export const services = [
     description:'',
     icon: '',
     content: 'Nossos programas de avaliação de desempenho e competências garantem uma análise acurada da produtividade dos colaboradores e da empresa como um todo. Esses programas possibilitam acompanhamento em ciclos curtos do desempenho individual e coletivo. Dispomos de ferramentas de avaliação de desempenho tradicionais de fácil manejo e de ferramentas ultramodernas para avaliação online em casos que se fizerem necessários. Os resultados das avaliações são fontes seguras para o planejamento e implantação de outros processos importantíssimos para a empresa como os programas de treinamento e desenvolvimento de pessoal. Podem ainda fornecer critérios para programas de remuneração, bonificações, premiações, promoções e transferências, além de propiciarem um acompanhamento do perfil individual do colaborador.',
-    link: '/services/',
+    link: '/services/avaliacao-de-desempenho',
     display: false
   },
   {
@@ -60,7 +60,7 @@ export const services = [
     description: '',
     icon: '',
     content:'Nos dias atuais, o adoecimento psíquico dos colaboradores é cada vez mais frequente. Pessoas adoecidas, ansiosas, depressivas ou mesmo desmotivadas estão relacionadas com baixa produtividade e maiores índices de acidentes de trabalho nas organizações. Nossos programas de bem estar psicológico preveem a aplicação de diagnósticos de saúde mental para detecção dos principais fatores associados a perda da qualidade de vida no trabalho. As intervenções são feitas de forma individual e em grupo, proporcionando um clima de motivação e confiança nos objetivos da organização e adesão aos seus valores. ',
-    link: '/services/',
+    link: '/services/programas-de-saude-mental',
     display: false
   },
   {
@@ -68,7 +68,7 @@ export const services = [
     description: '',
     icon: '',
     content:'Nossa empresa fornece diversas possibilidades de treinamento que vão do treinamento técnico até a preparação comportamental. Dispomos também de programas de desenvolvimento profissional que envolvem o planejamento para a mudança organizacional, transferências, promoções e preparação para outplacements. Trabalhamos com diagnósticos técnicos e científicos no levantamento das necessidades de treinamento, considerando os objetivos da organização como um todo, bem como a sua missão, visão e planejamento estratégico de longo prazo.',
-    link: '/services/',
+    link: '/services/treinamento-e-desenvolvimento',
     display: false
   },
   {
@@ -76,7 +76,7 @@ export const services = [
     description: '',
     icon: '',
     content:'A avaliação psicológica torna-se necessária nas situações em que seja necessário um grau maior de segurança e/ou confidencialidade, identificando corretamente os perfis psicológicos adequados a cada caso. Ainda conduzimos avaliação de perfil profissional e de equipes de trabalho com profissionais qualificados com mais de 20 anos de experiência no ramo da avaliação psicológica nas organizações. Todo o trabalho psicotécnico é conduzido por psicólogos devidamente registrados em seus conselhos de classe com instrumentos e ferramentas reconhecidas pelo Conselho Federal de Psicologia.',
-    link: '/services/',
+    link: '/services/avaliacao-psicologica',
     display: false
   },
   {
@@ -84,7 +84,7 @@ export const services = [
     description: '',
     icon: '',
     content: 'As pesquisas de clima organizacional têm a finalidade de levantar dados que revelem o moral da organização. Um clima organizacional positivo alavanca resultados e proporciona excelência nas relações com clientes e colaboradores. Os dados levantados são tratados e discutidos com a direção e, eventualmente, com as gerências de alto nível no sentido de determinar os fatores de ataque e desenvolvimento de um plano de ação na intervenção organizacional para alavancar os pontos fracos detectados. A participação de todos os colaboradores se torna essencial para a instalação de um clima sinérgico de participação e motivação rumo aos objetivos da empresa.',
-    link: 'services/',
+    link: 'services/pesquisa-de-clima-organizacional',
     display: false
   },
   {
@@ -92,7 +92,7 @@ export const services = [
     description: '',
     icon: '',
     content: 'O desenvolvimento de lideranças é atualmente um dos fatores chave das organizações de sucesso. Líderes planejados e alinhados com a estratégia da organização proporcionam maiores e melhores resultados junto às suas equipes de trabalho. Nossos programas de desenvolvimento de lideranças (PDLs) alcançam resultados otimizados para cada tipo de organização dentro das suas perspectivas de desempenho e de crescimento. ',
-    link: 'services/',
+    link: 'services/desenvolvimento-de-lideranças',
     display: false
   },
   {
@@ -100,7 +100,7 @@ export const services = [
     description: '',
     icon: '',
     content: 'As palestras motivacionais têm a finalidade de despertar reflexões nos colaboradores, notadamente quando são dinâmicas e participativas. Nossas modalidades de palestras englobam ferramentas eletrônicas, digitais e de gestão de pessoas capazes de estimular a sua equipe de trabalho, seguindo as sinalizações fornecidas pela empresa. Podemos desenvolver virtualmente qualquer tema de interesse da sua organização com um mínimo de investimento e bom retorno motivacional para a sua empresa.',
-    link: 'services/',
+    link: 'services/palestras-motivacionais',
     display: false
   },
   {
@@ -108,7 +108,7 @@ export const services = [
     description: '',
     icon: '',
     content: 'A orientação profissional auxilia diretamente no plano de carreira, cargos e salários. Caso a empresa ainda não disponha de um planejamento salarial, a CGRH está apta a desenvolver o PCCS, seguindo todas as etapas e processos técnicos envolvidos. Com expertise de profissionais capacitados e mais de 15 anos na área de orientação de carreira, orientação profissional e PCCS, desenvolvemos um processo de estudo do perfil psicológico e das habilidades e competências necessárias à ocupação do cargo, transição ou crescimento ne carreira.',
-    link: 'services/',
+    link: 'services/orientacao-profissional-carreira',
     display: false
   },
   {
@@ -116,7 +116,7 @@ export const services = [
     description: '',
     icon: '',
     content: 'A CGRH possui pessoal treinado para programas de cliente oculto. Esses programas visam inserir um observador para experimentar o serviço ou produto desejado, recolhendo as impressões previamente combinadas sobre o atendimento ou outro fator desejado. Esses programas são totalmente seguros e confidenciais, uma vez que seus resultados somente podem ser acessados pelas altas cúpulas administrativas ou gerenciais que os solicitaram. De posse dos dados das observações, medidas podem ser tomadas a fim de melhorar o atendimento ou a performance do serviço ou produto desejado.',
-    link: 'services/',
+    link: 'services/cliente-oculto',
     display: false
   },
 ];

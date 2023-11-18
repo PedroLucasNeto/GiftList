@@ -23,15 +23,29 @@ const navigation: Items[] = [
     current: false,
     composedItems: [
       {
-        name: 'Diagnóstico',
-        to: '/home#services',
+        name: 'Diagnóstico Organizacional',
+        to: '/services/diagnostico',
         current: false,
         composedItems: [],
         isSubmenuOpen: false,
       },
       {
-        name: 'Test',
-        to: '/home#services',
+        name: '',
+        to: '/services/treinamento-comportamental',
+        current: false,
+        composedItems: [],
+        isSubmenuOpen: false,
+      },
+      {
+        name: '',
+        to: '/services/desenvolvimento-liderancas',
+        current: false,
+        composedItems: [],
+        isSubmenuOpen: false,
+      },
+      {
+        name: 'Todos os Serviços',
+        to: '/services',
         current: false,
         composedItems: [],
         isSubmenuOpen: false,
