@@ -17,13 +17,8 @@ const navigation: Items[] = [
     to: "/home#services",
     composedItems: [
       {
-        name: "Diagnóstico",
-        to: "/home#services",
-        composedItems: [],
-      },
-      {
-        name: "Test",
-        to: "/home#services",
+        name: "Todos Serviços",
+        to: "/services",
         composedItems: [],
       },
     ],
