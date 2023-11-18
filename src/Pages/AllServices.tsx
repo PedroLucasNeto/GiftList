@@ -19,7 +19,7 @@ export const AllServices = () => {
 
     if (selectedService) {
       setTitle(selectedService.name);
-      setContent(selectedService.description);
+      setContent(selectedService.content);
       setHasService(true);
     }
   }, [location.pathname]);
