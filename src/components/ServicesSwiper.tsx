@@ -1,4 +1,3 @@
-import { Swiper, SwiperSlide } from "swiper/react";
 import { services } from "../types/Services";
 import "swiper/css/bundle";
 
