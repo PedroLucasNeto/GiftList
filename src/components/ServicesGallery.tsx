@@ -1,7 +1,7 @@
 import { services } from "../types/Services";
 import "swiper/css/bundle";
 
-const ServicesSwiper = () => {
+const ServicesGallery = () => {
   return (
     <div className="w-full min-h-screen">
       <div className="bg-gray-100">
@@ -37,4 +37,4 @@ const ServicesSwiper = () => {
   );
 };
 
-export default ServicesSwiper;
+export default ServicesGallery;

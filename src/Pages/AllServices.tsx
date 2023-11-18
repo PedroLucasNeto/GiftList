@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation /*useParams*/ } from "react-router-dom";
 import { services } from "../types/Services";
 import { SpecificService } from "./SpecificService";
-import ServicesSwiper from "../components/ServicesSwiper";
+import ServicesGallery from "../components/ServicesGallery";
 
 export const AllServices = () => {
   const location = useLocation();
@@ -30,7 +30,7 @@ export const AllServices = () => {
         {hasService && (
           <SpecificService content={content} title={title} key={title} />
         )}
-        {!hasService && <ServicesSwiper />}
+        {!hasService && <ServicesGallery />}
       </div>
     </div>
   );
