@@ -57,7 +57,7 @@ export const services = [
   {
     name: "Recrutamento e seleção de pessoas",
     description:
-      "Encontre os melhores talentos para sua empresa com nosso serviço de recrutamento e seleção. Utilizamos ferramentas avançadas, incluindo entrevistas, dinâmicas e testes, presenciais ou virtuais, garantindo os melhores resultados desde 2002. Conte com nossa expertise para construir uma equipe excepcional.",
+      "Encontre os melhores talentos para sua empresa com nosso serviço de recrutamento e seleção. Utilizamos ferramentas avançadas, incluindo entrevistas, dinâmicas e testes.",
     content:
       "Atualmente, os processos de recrutamento e seleção de pessoas privilegiam o uso de ferramentas virtuais de captação e testagem. Estamos equipados para aplicação de testes, entrevistas, aplicação de dinâmicas e outros processos de forma virtual e/ou presencial, sempre garantindo os melhores resultados para a sua empresa. Nosso pessoal atua na captação e seleção de pessoas desde 2002 nos estados de Pernambuco, Paraíba, Rio Grande do Norte, Piauí e Maranhão. Conte com a nossa expertise em captação, seleção e contratação de pessoal.",
     icon: "",
@@ -69,7 +69,7 @@ export const services = [
   {
     name: "Avaliação de desempenho",
     description:
-      "Avalie o desempenho individual e coletivo de sua equipe com nossos programas especializados. Utilizamos ferramentas tradicionais e modernas para garantir análises precisas. Os resultados fornecem insights valiosos para treinamento, desenvolvimento e tomada de decisões estratégicas.",
+      "Avalie o desempenho individual e coletivo de sua equipe com nossos programas especializados. Utilizamos ferramentas tradicionais e modernas para garantir análises precisas.",
     icon: "",
     content:
       "Nossos programas de avaliação de desempenho e competências garantem uma análise acurada da produtividade dos colaboradores e da empresa como um todo. Esses programas possibilitam acompanhamento em ciclos curtos do desempenho individual e coletivo. Dispomos de ferramentas de avaliação de desempenho tradicionais de fácil manejo e de ferramentas ultramodernas para avaliação online em casos que se fizerem necessários. Os resultados das avaliações são fontes seguras para o planejamento e implantação de outros processos importantíssimos para a empresa como os programas de treinamento e desenvolvimento de pessoal. Podem ainda fornecer critérios para programas de remuneração, bonificações, premiações, promoções e transferências, além de propiciarem um acompanhamento do perfil individual do colaborador.",
@@ -81,7 +81,7 @@ export const services = [
   {
     name: "PROGRAMAS DE SAÚDE MENTAL",
     description:
-      "Promova o bem-estar psicológico em sua organização com nossos programas de saúde mental. Diagnosticamos fatores associados à perda de qualidade de vida no trabalho e oferecemos intervenções personalizadas, tanto individualmente quanto em grupo, para criar um ambiente motivador e alinhado aos valores da sua empresa.",
+      "Promova o bem-estar psicológico em sua organização. Diagnosticamos fatores associados à perda de qualidade de vida no trabalho e oferecemos intervenções personalizadas.",
     icon: "",
     content:
       "Nos dias atuais, o adoecimento psíquico dos colaboradores é cada vez mais frequente. Pessoas adoecidas, ansiosas, depressivas ou mesmo desmotivadas estão relacionadas com baixa produtividade e maiores índices de acidentes de trabalho nas organizações. Nossos programas de bem estar psicológico preveem a aplicação de diagnósticos de saúde mental para detecção dos principais fatores associados a perda da qualidade de vida no trabalho. As intervenções são feitas de forma individual e em grupo, proporcionando um clima de motivação e confiança nos objetivos da organização e adesão aos seus valores.",
@@ -93,7 +93,7 @@ export const services = [
   {
     name: "TREINAMENTO E DESENVOLVIMENTO DOS COLABORADORES",
     description:
-      "Invista no crescimento profissional de sua equipe com nossos programas de treinamento. Desde treinamento técnico até desenvolvimento comportamental, oferecemos soluções abrangentes alinhadas aos objetivos estratégicos da sua organização.",
+      "Invista no crescimento profissional de sua equipe com nossos programas de treinamento. Desde treinamento técnico até desenvolvimento comportamental.",
     icon: "",
     content:
       "Nossa empresa fornece diversas possibilidades de treinamento que vão do treinamento técnico até a preparação comportamental. Dispomos também de programas de desenvolvimento profissional que envolvem o planejamento para a mudança organizacional, transferências, promoções e preparação para outplacements. Trabalhamos com diagnósticos técnicos e científicos no levantamento das necessidades de treinamento, considerando os objetivos da organização como um todo, bem como a sua missão, visão e planejamento estratégico de longo prazo.",
@@ -105,7 +105,7 @@ export const services = [
   {
     name: "AVALIAÇÃO PSICOLÓGICA",
     description:
-      "Garanta a adequação de perfis psicológicos em situações que demandem segurança e confidencialidade. Conduzimos avaliações psicológicas e de equipes com profissionais qualificados e experientes, fornecendo resultados confiáveis para a tomada de decisões.",
+      "Garanta a adequação de perfis psicológicos em situações que demandem segurança e confidencialidade.",
     icon: "",
     content:
       "A avaliação psicológica torna-se necessária nas situações em que seja necessário um grau maior de segurança e/ou confidencialidade, identificando corretamente os perfis psicológicos adequados a cada caso. Ainda conduzimos avaliação de perfil profissional e de equipes de trabalho com profissionais qualificados com mais de 20 anos de experiência no ramo da avaliação psicológica nas organizações. Todo o trabalho psicotécnico é conduzido por psicólogos devidamente registrados em seus conselhos de classe com instrumentos e ferramentas reconhecidas pelo Conselho Federal de Psicologia.",
