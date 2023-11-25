@@ -12,15 +12,9 @@ export const SpecificService = ({
   imgAlt,
 }: SpecificServiceProps) => {
   return (
-<<<<<<< HEAD
-    <div className='bg-white'>
-      <div className='mx-auto max-w-7xl px-6 lg:px-8'>
-        <div className='mx-auto max-w-2xl sm:text-center bg-diagnóstico'>
-=======
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
->>>>>>> 2b8df9fbd7298500f145f2e7561d4f96b1f9096b
           <img src={image} alt={imgAlt} />
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             {title}
