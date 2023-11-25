@@ -1,3 +1,5 @@
+import { CheckIcon } from "@heroicons/react/24/outline";
+
 interface SpecificServiceProps {
   title: string;
   content: string;
@@ -12,7 +14,7 @@ export const SpecificService = ({
   imgAlt,
 }: SpecificServiceProps) => {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-white ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
           <img src={image} alt={imgAlt} />
@@ -52,7 +54,7 @@ export const SpecificService = ({
             </ul>
           </div>
           <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-            <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
+            <div className="rounded-2xl h-full bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
               <div className="mx-auto max-w-xs px-8">
                 <span className="text-5xl font-bold tracking-tight text-gray-900">
                   Contato
