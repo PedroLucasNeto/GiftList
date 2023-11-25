@@ -1,7 +1,7 @@
-import Services from "../components/Services";
-import Cta from "../components/Cta";
-import MainContent from "../components/MainContent";
-import { Address } from "../components/Address";
+import Services from '../components/Services';
+import Cta from '../components/Cta';
+import MainContent from '../components/MainContent';
+import { Address } from '../components/Address';
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
         <Cta />
         <Services />
         <MainContent />
-        <Address />
+        <Address height='300' width='' />
       </article>
     </>
   );
