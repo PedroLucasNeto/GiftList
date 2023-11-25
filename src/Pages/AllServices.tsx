@@ -26,7 +26,7 @@ export const AllServices = () => {
 
   return (
     <div className='flex justify-center'>
-      <div className='min-h-screen text-justify min-h-full px-6 w-full lg:px-8 lg:max-w-2/3 xl:max-w-2/3 2xl:max-w-2/3 self-center my-12 '>
+      <div className='min-h-screen text-justify min-h-full px-6 w-full lg:px-8 lg:max-w-2/3 xl:max-w-2/3 2xl:max-w-2/3 self-center mx-20 my-2 '>
         {hasService && selectedService && (
           <SpecificService
             content={selectedService?.content}
