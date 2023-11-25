@@ -9,7 +9,7 @@ export type service = {
     content: string,
     description: string,
     display: boolean,
-    icon?: React.ElementType,
+    icon: React.ElementType,
     img: string,
     imgAlt: string,
     link: string,
