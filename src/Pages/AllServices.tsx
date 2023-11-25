@@ -1,34 +1,40 @@
-import { useState, useEffect } from "react";
-import { useLocation /*useParams*/ } from "react-router-dom";
-import { services } from "../types/Services";
-import { SpecificService } from "./SpecificService";
-import ServicesGallery from "../components/ServicesGallery";
+import { useState, useEffect } from 'react';
+import { useLocation /*useParams*/ } from 'react-router-dom';
+import { services } from '../types/Services';
+import { SpecificService } from './SpecificService';
+import ServicesGallery from '../components/ServicesGallery';
+import { service } from '../types/Services';
 
 export const AllServices = () => {
   const location = useLocation();
-  // const { serviceId } = useParams();
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [selectedService, setSelectedService] = useState<service | undefined>();
   const [hasService, setHasService] = useState(false);
 
   useEffect(() => {
-    // Aqui você pode usar serviceId para encontrar o serviço específico
-    const selectedService = services.find(
+    const foundService = services.find(
       (service) => service.link === location.pathname
     );
 
-    if (selectedService) {
-      setTitle(selectedService.name);
-      setContent(selectedService.content);
+    if (foundService) {
+      setSelectedService(foundService);
       setHasService(true);
+    } else {
+      setHasService(false);
+      setSelectedService(undefined); // Certifique-se de definir como undefined se o serviço não for encontrado
     }
   }, [location.pathname]);
 
   return (
-    <div className="flex justify-center">
-      <div className="min-h-screen text-justify min-h-full px-6 w-full lg:px-8 lg:max-w-2/3 xl:max-w-2/3 2xl:max-w-2/3 self-center my-12 ">
-        {hasService && (
-          <SpecificService content={content} title={title} key={title} />
+    <div className='flex justify-center'>
+      <div className='min-h-screen text-justify min-h-full px-6 w-full lg:px-8 lg:max-w-2/3 xl:max-w-2/3 2xl:max-w-2/3 self-center my-12 '>
+        {hasService && selectedService && (
+          <SpecificService
+            content={selectedService?.content}
+            title={selectedService?.name}
+            image={selectedService?.img}
+            imgAlt={selectedService?.imgAlt}
+            key={selectedService?.name}
+          />
         )}
         {!hasService && <ServicesGallery />}
       </div>

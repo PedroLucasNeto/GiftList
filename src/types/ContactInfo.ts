@@ -23,13 +23,13 @@ export const contactInfo = [
       location: "",
       phone: "(83) 9 9810-7584",
     },
-    {
-      title: "Localização",
-      key: 4,
-      email: "",
-      location: "Rua João Machado, 267 - Prata, Campina Grande - PB, 58400-510",
-      phone: "",
-    },
+    // {
+    //   title: "Localização",
+    //   key: 4,
+    //   email: "",
+    //   location: "Rua João Machado, 267 - Prata, Campina Grande - PB, 58400-510",
+    //   phone: "",
+    // },
     {
       title: "Ambiente Virtual",
       key: 5,

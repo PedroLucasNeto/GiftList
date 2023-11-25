@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Navbar, Nav } from "rsuite";
+import { useState } from 'react';
+import { Navbar, Nav } from 'rsuite';
 
 type Items = {
   name: string;
@@ -8,35 +8,35 @@ type Items = {
 };
 const navigation: Items[] = [
   {
-    name: "Início",
-    to: "/home",
+    name: 'Início',
+    to: '/home',
     composedItems: [],
   },
   {
-    name: "Serviços",
-    to: "/home#services",
+    name: 'Serviços',
+    to: '/home#services',
     composedItems: [
       {
-        name: "Todos Serviços",
-        to: "/services",
+        name: 'Todos Serviços',
+        to: '/services',
         composedItems: [],
       },
     ],
   },
   {
-    name: "Mais",
-    to: "/contact",
+    name: 'Mais',
+    to: '/contact',
     composedItems: [
       {
-        name: "Política de Privacidade",
-        to: "/privacy-policy",
+        name: 'Política de Privacidade',
+        to: '/privacy-policy',
         composedItems: [],
       },
     ],
   },
   {
-    name: "Contato",
-    to: "/contact",
+    name: 'Contato',
+    to: '/contact',
     composedItems: [],
   },
 ];
@@ -47,18 +47,18 @@ export default function NavBarContent() {
   const [navItems] = useState(itemsOrder.map((index) => navigation[index]));
 
   return (
-    <Navbar className="sm:pr-0 pr-6 bg-darkblue">
-      <Navbar.Brand className="text-2xl font-semibold p-0" href="/">
+    <Navbar className='sm:pr-0 pr-6 bg-darkblue px-15'>
+      <Navbar.Brand className='text-2xl font-semibold p-0' href='/'>
         CGRH
       </Navbar.Brand>
-      <Nav pullRight>
+      <Nav pullRight className=''>
         {navItems.map((item, index) =>
           item.composedItems.length > 0 ? (
             <Nav.Menu key={index} title={item.name}>
               {item.composedItems.map((subItem, subItemIndex) => (
                 <Nav.Item
-                  as={"a"}
-                  className="w-24"
+                  as={'a'}
+                  className='w-24'
                   href={subItem.to}
                   key={subItemIndex}
                 >
