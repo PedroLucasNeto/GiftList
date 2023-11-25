@@ -1,20 +1,30 @@
-import { Link } from "react-router-dom";
-import { Card } from "./Card";
+import { Link } from 'react-router-dom';
+import { Card } from './Card';
 
-import { contactInfo } from "../types/ContactInfo";
+import { contactInfo } from '../types/ContactInfo';
+import { Address } from './Address';
 
 export const Contact = () => {
   return (
     <>
-      <div className="flex justify-center min-h-screen min-w-full ">
-        <div className="flex-col text-center p-8 w-full md:w-2/3 ">
-          <h2 className=" text-3xl font-bold  text-darkblue sm:text-4xl">
+      <div className='flex justify-center min-h-screen min-w-full flex-wrap-reverse'>
+        <div className='flex-col text-center p-8 md:w-1/2 w-full'>
+          <h2 className=' text-3xl font-bold  text-darkblue sm:text-4xl'>
+            Localização
+          </h2>
+          <p className='mt-4 text-lg leading-8 text-darkblue'>
+            Agende uma visita.
+          </p>
+          <Address height='450' width='600' />
+        </div>
+        <div className='flex-col text-center p-8 w-full md:w-1/2 '>
+          <h2 className=' text-3xl font-bold  text-darkblue sm:text-4xl'>
             Entre em contato
           </h2>
-          <p className="mt-6 text-lg leading-8 text-darkblue">
+          <p className='mt-4 text-lg leading-8 text-darkblue'>
             Fale com nossos especialistas pelos seguintes meios.
           </p>
-          <div className="flex flex-wrap justify-center p-2 gap-4 mt-8">
+          <div className='flex flex-wrap justify-center p-2 gap-4 '>
             {contactInfo.map((item) => (
               <Card
                 title={item.title}
@@ -27,17 +37,17 @@ export const Contact = () => {
               />
             ))}
           </div>
-          <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-center">
+          <div className='mt-10 flex items-center justify-center gap-x-6 lg:justify-center'>
             <Link
-              to="/"
-              className="text-sm font-semibold leading-6 text-darkblue"
+              to='/'
+              className='text-sm font-semibold leading-6 text-darkblue'
             >
-              ←<span aria-hidden="true"> Voltar</span>
+              ←<span aria-hidden='true'> Voltar</span>
             </Link>
             <a
-              target="blank"
-              href="https://wa.me/558399895050?text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20mais%20informações."
-              className="rounded-md bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-darkblue shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              target='blank'
+              href='https://wa.me/558399895050?text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20mais%20informações.'
+              className='rounded-md bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
             >
               WhatsApp
             </a>
