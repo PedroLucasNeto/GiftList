@@ -8,11 +8,25 @@ html {
   text-align: center;
 }
 
-.rs-navbar{
-  background-color: #111827!important;
+.rs-navbar {
+  background-color: #111827 !important;
   color: white;
 }
 
-.rs-navbar-brand{
+.rs-navbar-brand {
   padding: 10px 20px;
 }
+
+@media (min-width: 576px) {
+  .rs-nav {
+    right: 0;
+    position: absolute;
+  }
+}
+@media (min-width: 1280px) {
+  .rs-nav {
+    right: 16;
+    position: absolute;
+  }
+}
+

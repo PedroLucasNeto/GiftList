@@ -79,11 +79,6 @@ const navigation: Items[] = [
 
 export default function NavBar() {
   const [navItems, setNavItems] = useState(navigation);
-
-  // function classNames(...classes: string[]) {
-  //   return classes.filter(Boolean).join(" ");
-  // }
-
   function toggleSubmenu(item: Items) {
     const updatedNavItems: Items[] = navItems.map((navItem) => {
       if (navItem === item) {
@@ -100,14 +95,11 @@ export default function NavBar() {
     });
     setNavItems(updatedNavItems);
   }
-
   return (
     <Disclosure as='nav' className='bg-darkblue border-gray-100 border-b-2'>
-      <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 '>
+      <div className='mx-auto max-w-7xl px-16 sm:px-6 lg:px-8 '>
         <div className='flex h-16 justify-between items-center w-100'>
-          <div className=''>
-            <p className='text-gray-900'>CGRH</p>
-          </div>
+          <p className='text-gray-900'>CGRH</p>
           <div className='flex space-x-4'>
             {navItems.map((item) => (
               <div

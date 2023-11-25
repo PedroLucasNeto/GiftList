@@ -47,11 +47,11 @@ export default function NavBarContent() {
   const [navItems] = useState(itemsOrder.map((index) => navigation[index]));
 
   return (
-    <Navbar className='sm:pr-0 pr-6 bg-darkblue px-15'>
+    <Navbar className='bg-darkblue'>
       <Navbar.Brand className='text-2xl font-semibold p-0' href='/'>
         CGRH
       </Navbar.Brand>
-      <Nav pullRight className=''>
+      <Nav className='absolute right-0'>
         {navItems.map((item, index) =>
           item.composedItems.length > 0 ? (
             <Nav.Menu key={index} title={item.name}>
