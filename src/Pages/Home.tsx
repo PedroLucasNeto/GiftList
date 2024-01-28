@@ -1,17 +1,16 @@
-import Services from '../components/Services';
-import Cta from '../components/Cta';
-import MainContent from '../components/MainContent';
-import { Address } from '../components/Address';
+import { Route, Routes } from "react-router-dom";
+import NotFound from "./NotFound";
+import { Main } from "../components/Main";
 
 const Home = () => {
   return (
     <>
-      <article>
-        <Cta />
-        <Services />
-        <MainContent />
-        <Address height='300' width='' />
-      </article>
+      <div className="min-h-screen">
+        <Routes>
+          <Route path="*" element={<NotFound />} />
+          <Route index element={<Main />} />
+        </Routes>
+      </div>
     </>
   );
 };
