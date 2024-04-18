@@ -1,9 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-
-body {
-  font-family: 'Great Vibes', cursive;
-  letter-spacing: 0.2rem;
-}
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&display=swap'); 
 
 html {
   scroll-behavior: smooth;

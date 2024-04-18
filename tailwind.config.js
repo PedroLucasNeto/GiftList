@@ -3,6 +3,9 @@ export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        hurricane: ['Hurricane', 'cursive'],
+      },
       important: true,
       backgroundColor: {
         darkblue: '#111827',
