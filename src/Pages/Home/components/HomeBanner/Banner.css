@@ -1,0 +1,25 @@
+.banner {
+    position: relative;
+    height: calc(100vh - 340px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .banner::before {
+ 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/assets/images/image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 10%;
+    mix-blend-mode: overlay;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    /* z-index: -1; */
+  }
+  

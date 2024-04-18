@@ -1,15 +1,16 @@
-import { Route, Routes } from "react-router-dom";
-import NotFound from "./NotFound";
-import { Main } from "../components/Main";
+// import Contact from "./Home/components/Contact/Contact";
+import Countdown from "./Home/components/Countdown/Countdown";
+import { HomeBanner } from "./Home/components/HomeBanner/HomeBanner";
+import OurStory from "./Home/components/OurStory.tsx/OurStory";
 
 const Home = () => {
   return (
     <>
-      <div className="min-h-screen">
-        <Routes>
-          <Route path="*" element={<NotFound />} />
-          <Route index element={<Main />} />
-        </Routes>
+      <div className="min-h-screen bg-gray-600">
+        <HomeBanner />
+        <Countdown />
+        <OurStory />
+        {/* <Contact /> */}
       </div>
     </>
   );
