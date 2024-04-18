@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Countdown = () => {
   // Defina a data final para a contagem regressiva
@@ -33,6 +33,7 @@ const Countdown = () => {
     }, 1000);
 
     return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timeLeft]);
 
   // Renderize o componente Countdown
