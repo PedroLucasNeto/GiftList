@@ -1,4 +1,4 @@
-// import Contact from "./Home/components/Contact/Contact";
+import Contact from "./Home/components/Contact/Contact";
 import Countdown from "./Home/components/Countdown/Countdown";
 import GiftList from "./Home/components/Gifts/GiftList";
 import { HomeBanner } from "./Home/components/HomeBanner/HomeBanner";
@@ -12,7 +12,7 @@ const Home = () => {
         <Countdown />
         <OurStory />
         <GiftList />
-        {/* <Contact /> */}
+        <Contact />
       </div>
     </>
   );
