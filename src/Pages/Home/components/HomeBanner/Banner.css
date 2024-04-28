@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(102, 102, 102) !important;
   }
   
   .banner::before {
@@ -19,7 +20,5 @@
     background-repeat: no-repeat;
     background-position: center 10%;
     mix-blend-mode: overlay;
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    /* z-index: -1; */
   }
   

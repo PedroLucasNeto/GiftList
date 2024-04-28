@@ -8,7 +8,7 @@ import Welcome from "./Home/components/Welcome/Welcome";
 const Home = () => {
   return (
     <>
-      <div className="min-h-screen bg-gray-600">
+      <div className="min-h-screen">
         <HomeBanner />
         <Countdown />
         <Welcome />
