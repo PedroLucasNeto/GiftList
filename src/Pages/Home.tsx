@@ -3,6 +3,7 @@ import Countdown from "./Home/components/Countdown/Countdown";
 import GiftList from "./Home/components/Gifts/GiftList";
 import { HomeBanner } from "./Home/components/HomeBanner/HomeBanner";
 import OurStory from "./Home/components/OurStory.tsx/OurStory";
+import Welcome from "./Home/components/Welcome/Welcome";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <div className="min-h-screen bg-gray-600">
         <HomeBanner />
         <Countdown />
+        <Welcome />
         <OurStory />
         <GiftList />
         <Contact />

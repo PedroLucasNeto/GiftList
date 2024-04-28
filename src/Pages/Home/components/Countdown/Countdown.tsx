@@ -38,24 +38,27 @@ const Countdown = () => {
 
   // Renderize o componente Countdown
   return (
-    <div className="bg-gray-600 flex flex-col justify-center items-center text-center text-red-100 py-12 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-hurricane">
+    <div
+      className="bg-lightnude flex flex-col justify-center items-center text-center 
+       py-12 px-4 sm:px-6 lg:px-8"
+    >
+      <h1 className="text-4xl md:text-5xl lg:text-6xl text-darkblue font-bold mb-8 font-hurricane font-normal">
         Contagem Regressiva
       </h1>
       <div className="flex justify-center flex-wrap gap-4">
-        <div className="bg-red-100 w-32 text-gray-600 text-center border rounded-lg border-gray-500 p-3 mb-4">
+        <div className="bg-darkblue w-32 text-white text-center border rounded-lg border-gray-500 p-3 mb-4">
           <p className="text-4xl md:text-5xl font-bold">{timeLeft.days}</p>
           <p className="text-sm md:text-base">Dias</p>
         </div>
-        <div className="bg-red-100 w-32 text-gray-600 text-center border rounded-lg border-gray-500 p-3 mb-4">
+        <div className="bg-darkblue w-32 text-white text-center border rounded-lg border-gray-500 p-3 mb-4">
           <p className="text-4xl md:text-5xl font-bold">{timeLeft.hours}</p>
           <p className="text-sm md:text-base">Horas</p>
         </div>
-        <div className="bg-red-100 w-32 text-gray-600 text-center border rounded-lg border-gray-500 p-3 mb-4">
+        <div className="bg-darkblue w-32 text-white text-center border rounded-lg border-gray-500 p-3 mb-4">
           <p className="text-4xl md:text-5xl font-bold">{timeLeft.minutes}</p>
           <p className="text-sm md:text-base">Minutos</p>
         </div>
-        <div className="bg-red-100 w-32 text-gray-600 text-center border rounded-lg border-gray-500 p-3 mb-4">
+        <div className="bg-darkblue w-32 text-white text-center border rounded-lg border-gray-500 p-3 mb-4">
           <p className="text-4xl md:text-5xl font-bold">{timeLeft.seconds}</p>
           <p className="text-sm md:text-base">Segundos</p>
         </div>

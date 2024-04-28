@@ -9,14 +9,14 @@ export default {
       important: true,
       backgroundColor: {
         darkblue: '#101720',
-        darknude: '#101720',
-        lightnude: '#101720',
+        darknude: '#DEBCB0',
+        lightnude: '#FFF4EF',
         darkbrown: '#BF573F'
       },
       textColor: {
-        darkblue: '#FFF4EF',
-        darknude: '#FFF4EF',
-        lightnude: '#101720',
+        darkblue: '#101720',
+        darknude: '#DEBCB0',
+        lightnude: '#FFF4EF',
         darkbrown: '#BF573F'
       },
       maxWidth: {
