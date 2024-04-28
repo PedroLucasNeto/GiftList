@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const Countdown = () => {
   // Defina a data final para a contagem regressiva
-  const targetDate = new Date("2024-10-24T23:59:59");
+  const targetDate = new Date('2024-10-24T23:59:59');
 
   // Estado para armazenar os dias, horas, minutos e segundos restantes
   const [timeLeft, setTimeLeft] = useState({
@@ -38,26 +38,26 @@ const Countdown = () => {
 
   // Renderize o componente Countdown
   return (
-    <div className="bg-gray-600 flex flex-col justify-center items-center text-center text-red-100 py-12 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-hurricane">
+    <div className='bg-red-200 flex flex-col justify-center items-center text-center text-red-100 py-12 px-4 sm:px-6 lg:px-8'>
+      <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-hurricane'>
         Contagem Regressiva
       </h1>
-      <div className="flex justify-center flex-wrap gap-4">
-        <div className="bg-red-100 w-32 text-gray-600 text-center border rounded-lg border-gray-500 p-3 mb-4">
-          <p className="text-4xl md:text-5xl font-bold">{timeLeft.days}</p>
-          <p className="text-sm md:text-base">Dias</p>
+      <div className='flex justify-center flex-wrap gap-4'>
+        <div className='bg-red-100 w-32 text-red-200 text-center border rounded-lg border-gray-500 p-3 mb-4'>
+          <p className='text-4xl md:text-5xl font-bold'>{timeLeft.days}</p>
+          <p className='text-sm md:text-base'>Dias</p>
         </div>
-        <div className="bg-red-100 w-32 text-gray-600 text-center border rounded-lg border-gray-500 p-3 mb-4">
-          <p className="text-4xl md:text-5xl font-bold">{timeLeft.hours}</p>
-          <p className="text-sm md:text-base">Horas</p>
+        <div className='bg-red-100 w-32 text-red-200 text-center border rounded-lg border-gray-500 p-3 mb-4'>
+          <p className='text-4xl md:text-5xl font-bold'>{timeLeft.hours}</p>
+          <p className='text-sm md:text-base'>Horas</p>
         </div>
-        <div className="bg-red-100 w-32 text-gray-600 text-center border rounded-lg border-gray-500 p-3 mb-4">
-          <p className="text-4xl md:text-5xl font-bold">{timeLeft.minutes}</p>
-          <p className="text-sm md:text-base">Minutos</p>
+        <div className='bg-red-100 w-32 text-red-200 text-center border rounded-lg border-gray-500 p-3 mb-4'>
+          <p className='text-4xl md:text-5xl font-bold'>{timeLeft.minutes}</p>
+          <p className='text-sm md:text-base'>Minutos</p>
         </div>
-        <div className="bg-red-100 w-32 text-gray-600 text-center border rounded-lg border-gray-500 p-3 mb-4">
-          <p className="text-4xl md:text-5xl font-bold">{timeLeft.seconds}</p>
-          <p className="text-sm md:text-base">Segundos</p>
+        <div className='bg-red-100 w-32 text-red-200 text-center border rounded-lg border-gray-500 p-3 mb-4'>
+          <p className='text-4xl md:text-5xl font-bold'>{timeLeft.seconds}</p>
+          <p className='text-sm md:text-base'>Segundos</p>
         </div>
       </div>
     </div>

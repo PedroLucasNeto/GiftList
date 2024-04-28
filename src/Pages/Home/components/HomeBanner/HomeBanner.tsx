@@ -1,8 +1,8 @@
-import "./Banner.css";
+import './Banner.css';
 export const HomeBanner = () => {
   return (
-    <div className="banner">
-      <p className="text-5xl font-bold text-red-100 font-hurricane">
+    <div className='banner'>
+      <p className='text-5xl font-bold text-red-200 font-hurricane'>
         Erick e Karina
       </p>
     </div>
