@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 interface GiftCardProps {
   itemName: string;
@@ -20,10 +20,9 @@ const GiftCard = ({ itemName, itemImage, descriptionLeft }: GiftCardProps) => {
   };
 
   return (
-    <div className="flex-column space-y-4 bg-white w-96 h-64 p-2 rounded-sm">
-      <h4>{itemName}</h4>
+    <div className='space-y-4 bg-white w-full md:w-8/12 max-h-64 p-2 rounded-sm'>
       <div
-        className={`flex gap-2 ${descriptionLeft ? "flex-row-reverse" : ""}`}
+        className={`flex gap-2 ${descriptionLeft ? '' : 'flex-row-reverse'}`}
       >
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam animi
@@ -31,23 +30,24 @@ const GiftCard = ({ itemName, itemImage, descriptionLeft }: GiftCardProps) => {
           modi eligendi blanditiis fugit, autem recusandae harum, esse unde
           atque?
         </p>
-        <img src={itemImage} alt={itemName} className="w-32  rounded-full" />
+        <img src={itemImage} alt={itemName} className='w-5/12 rounded-full' />
       </div>
-      <div className="flex">
+      {/*<div className='flex'>
         <button
-          className="text-center text-gray-900 rounded-md px-2 py-1"
+          className='text-center text-gray-900 rounded-md px-2 py-1'
           onClick={handleRemove}
         >
           -
         </button>
-        <span className="mt-1">{quantity}</span>
+        <span className='mt-1'>{quantity}</span>
         <button
-          className="text-center text-gray-900 rounded-md px-2 py-1"
+          className='text-center text-gray-900 rounded-md px-2 py-1'
           onClick={handleAdd}
         >
           +
         </button>
       </div>
+  */}
     </div>
   );
 };

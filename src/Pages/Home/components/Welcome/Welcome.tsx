@@ -1,9 +1,9 @@
 const Welcome = () => {
   return (
-    <div id="welcome" className="bg-white py-12">
-      <div className="container mx-auto text-center">
-        <div>
-          <p className="text-lg text-darkblue mb-4">
+    <section id='welcome' className='bg-white py-12 mx-10'>
+      <div className='container mx-auto text-left'>
+        <div className='flex justify-center'>
+          <p className='text-lg text-darkblue mb-4'>
             Olá a todos! <br />
             Estamos muito felizes em compartilhar os detalhes do nosso dia
             especial! <br />
@@ -12,7 +12,7 @@ const Welcome = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,6 +1,6 @@
 .banner {
     position: relative;
-    height: calc(100vh - 340px);
+    height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
