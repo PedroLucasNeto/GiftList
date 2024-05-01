@@ -1,82 +1,84 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const Contact: React.FC = () => {
   // Estados para armazenar os valores do formulário
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
   // Função para lidar com o envio do formulário
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Aqui você pode implementar a lógica para enviar o formulário
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
+    console.log('Name:', name);
+    console.log('Email:', email);
+    console.log('Message:', message);
     // Resetar os campos do formulário após o envio
-    setName("");
-    setEmail("");
-    setMessage("");
+    setName('');
+    setEmail('');
+    setMessage('');
   };
 
   return (
-    <section className="w-full h-screen mx-auto p-6 bg-lightnude rounded-lg shadow-xl text-xl">
-      <h2 className="text-2xl font-semibold mb-4">Deixe seu recado</h2>
-      <form onSubmit={handleSubmit} className="mx-auto max-w-md">
-        <div className="mb-4">
+    <section className='w-full h-screen mx-auto p-6 bg-lightnude rounded-lg shadow-xl text-md'>
+      <h2 className='text-2xl mb-4 font-normal font-hurricane text-5xl text-darkblue text-center'>
+        Deixe seu recado
+      </h2>
+      <form onSubmit={handleSubmit} className='mx-auto max-w-md'>
+        <div className='mb-4'>
           <label
-            htmlFor="name"
-            className="block text-gray-700 text-xl font-bold mb-2"
+            htmlFor='name'
+            className='block text-gray-700 text-md font-bold mb-2'
           >
             Seu Nome
           </label>
           <input
-            type="text"
-            id="name"
+            type='text'
+            id='name'
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Seu Nome"
+            className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+            placeholder='Seu Nome'
             required
           />
         </div>
-        <div className="mb-4">
+        <div className='mb-4'>
           <label
-            htmlFor="email"
-            className="block text-gray-700  font-bold mb-2"
+            htmlFor='email'
+            className='block text-gray-700  font-bold mb-2'
           >
             Email
           </label>
           <input
-            type="email"
-            id="email"
+            type='email'
+            id='email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Seu Email"
+            className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+            placeholder='Seu Email'
             required
           />
         </div>
-        <div className="mb-6">
+        <div className='mb-6'>
           <label
-            htmlFor="message"
-            className="block text-gray-700  font-bold mb-2"
+            htmlFor='message'
+            className='block text-gray-700  font-bold mb-2'
           >
             Recado
           </label>
           <textarea
-            id="message"
+            id='message'
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
-            placeholder="Sua Mensagem"
+            className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none'
+            placeholder='Sua Mensagem'
             required
           />
         </div>
-        <div className="flex justify-end">
+        <div className='flex justify-end'>
           <button
-            type="submit"
-            className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type='submit'
+            className='bg-darkbrown hover:bg-darknude text-white hover:text-darkbrown font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
           >
             Enviar
           </button>
