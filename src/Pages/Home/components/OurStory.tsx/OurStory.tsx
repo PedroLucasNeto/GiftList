@@ -1,7 +1,7 @@
 import coupleImg from '/assets/images/image.png';
 const OurStory = () => {
   return (
-    <div className='bg-lightnude py-12'>
+    <section id='our-story' className='bg-lightnude py-12'>
       <div className='container mx-auto'>
         <h2 className='text-5xl text-center mb-8 font-hurricane font-normal'>
           Nossa História
@@ -27,7 +27,7 @@ const OurStory = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

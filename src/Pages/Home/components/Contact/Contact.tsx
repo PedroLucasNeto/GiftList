@@ -20,7 +20,10 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className='w-full h-screen mx-auto p-6 bg-lightnude rounded-lg shadow-xl text-md'>
+    <section
+      id='contact'
+      className='w-full h-screen mx-auto p-6 bg-lightnude rounded-lg shadow-xl text-md'
+    >
       <h2 className='text-2xl mb-4 font-normal font-hurricane text-5xl text-darkblue text-center'>
         Deixe seu recado
       </h2>

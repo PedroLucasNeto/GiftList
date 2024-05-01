@@ -1,3 +1,4 @@
+import { BackToTop } from '../components/BackToTop';
 import Contact from './Home/components/Contact/Contact';
 import Countdown from './Home/components/Countdown/Countdown';
 import Gallery from './Home/components/Gallery/Gallery';
@@ -17,6 +18,7 @@ const Home = () => {
         <Gallery />
         <GiftList />
         <Contact />
+        <BackToTop />
       </div>
     </>
   );
