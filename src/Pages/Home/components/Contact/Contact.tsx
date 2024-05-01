@@ -20,9 +20,9 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-red-100 rounded-lg shadow-xl text-xl">
+    <section className="w-full h-screen mx-auto p-6 bg-lightnude rounded-lg shadow-xl text-xl">
       <h2 className="text-2xl font-semibold mb-4">Deixe seu recado</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="mx-auto max-w-md">
         <div className="mb-4">
           <label
             htmlFor="name"
@@ -82,7 +82,7 @@ const Contact: React.FC = () => {
           </button>
         </div>
       </form>
-    </div>
+    </section>
   );
 };
 
