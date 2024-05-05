@@ -1,5 +1,4 @@
 import { useCart } from "../context/CartContext";
-import { XCircleIcon } from "@heroicons/react/24/outline";
 
 export const Cart = () => {
   const {
