@@ -14,7 +14,7 @@ export const Cart = () => {
   return (
     <div
       id="cart-modal"
-      className={` ${
+      className={`  ${
         isOpen ? "flex flex-col items-center" : "hidden"
       } fixed inset-0 overflow-y-auto`}
     >
@@ -23,8 +23,8 @@ export const Cart = () => {
           <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
         </div>
         {/* CART CONTAINER */}
-        <div className="w-full h-full my-4 bg-white rounded-lg overflow-hidden shadow-xl transform transition-all  sm:min-w-lg sm:w-full lg:w-[600px]">
-          <div className="bg-gray-50 px-4 py-3 sm:px-6">
+        <div className="w-full h-full m-4 mt-16 sm:mt-8 bg-white rounded-lg overflow-hidden shadow-xl transform transition-all  sm:min-w-lg sm:w-full lg:w-[600px]">
+          <div className="w-full bg-gray-50 px-4 py-3 sm:px-6">
             {/* CART HEADER */}
             <header className="flex justify-between">
               <h3 className="text-lg font-medium leading-6 text-gray-900">
@@ -39,7 +39,7 @@ export const Cart = () => {
               </button>
             </header>
           </div>
-          <div className="overflow-y-scroll overflow-x-hidden">
+          <div className="overflow-y-scroll overflow-x-hidden w-full">
             <table className="w-full">
               <thead>
                 <tr className="border-b border-gray-200">
@@ -117,7 +117,7 @@ export const Cart = () => {
           </div>
           {/* TOTAL */}
           {cartItems.length > 0 && (
-            <div className="bg-gray-50 px-4 py-3 sm:px-6">
+            <div className="bg-gray-50 px-4 py-3 sm:px-6 w-full">
               <div className="flex justify-between">
                 <p className="text-sm text-gray-600">Total</p>
                 <p className="text-sm text-gray-900">
