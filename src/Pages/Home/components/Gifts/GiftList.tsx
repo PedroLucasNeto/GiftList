@@ -1,9 +1,9 @@
-import { useCart } from "../../../../context/CartContext";
+// import { useCart } from "../../../../context/CartContext";
 import GiftCard from "./GiftCard";
 import { GiftInfo } from "./GiftInfo";
 
 const GiftList = () => {
-  const { addItemToCart } = useCart();
+  // const { addItemToCart } = useCart();
 
   const items = [
     {
@@ -38,7 +38,6 @@ const GiftList = () => {
       <div className="space-y-4 flex flex-col justify-center align-center items-center">
         {items.map((item, index) => (
           <GiftCard
-            addItemToCart={() => addItemToCart}
             key={index}
             itemName={item.itemName}
             itemImage={item.itemImage}

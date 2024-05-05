@@ -1,12 +1,13 @@
 // import { useState } from 'react';
 
+import { useCart } from "../../../../context/CartContext";
+
 interface GiftCardProps {
   itemName: string;
   itemImage: string;
   description: string;
   descriptionLeft: boolean;
   price: number;
-  addItemToCart: () => void;
 }
 
 const GiftCard = ({
@@ -15,19 +16,18 @@ const GiftCard = ({
   descriptionLeft,
   description,
   price,
-  addItemToCart,
 }: GiftCardProps) => {
-  // const [quantity, setQuantity] = useState(0);
-
-  // const handleAdd = () => {
-  //   setQuantity((prevQuantity) => prevQuantity + 1);
-  // };
-
-  // const handleRemove = () => {
-  //   if (quantity > 0) {
-  //     setQuantity((prevQuantity) => prevQuantity - 1);
-  //   }
-  // };
+  const { addItemToCart } = useCart();
+  function handleAddItemToCart() {
+    addItemToCart({
+      itemName,
+      itemImage,
+      description,
+      price,
+      descriptionLeft,
+      quantity: 1,
+    });
+  }
 
   return (
     <div className="space-y-4 bg-white min-w-[300px] w-320 sm:w-full md:w-[600px] max-h-64 p-4 sm:p-8 rounded-md ">
@@ -38,7 +38,7 @@ const GiftCard = ({
       >
         <button
           className="bg-black text-white hover:bg-gray-700 h-fit text-[9px] sm:text-sm p-2 sm:px-8 rounded-md self-end"
-          onClick={addItemToCart}
+          onClick={handleAddItemToCart}
         >
           Presentear
         </button>
@@ -59,23 +59,6 @@ const GiftCard = ({
           />
         </div>
       </div>
-
-      {/*<div className='flex'>
-        <button
-          className='text-center text-gray-900 rounded-md px-2 py-1'
-          onClick={handleRemove}
-        >
-          -
-        </button>
-        <span className='mt-1'>{quantity}</span>
-        <button
-          className='text-center text-gray-900 rounded-md px-2 py-1'
-          onClick={handleAdd}
-        >
-          +
-        </button>
-      </div>
-  */}
     </div>
   );
 };
