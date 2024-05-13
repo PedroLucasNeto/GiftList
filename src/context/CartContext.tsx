@@ -1,5 +1,6 @@
 import { createContext, useState, useContext, ReactNode } from "react";
 import { toast } from "react-toastify";
+import { createCheckout } from "../api/service/paymentService";
 
 type CartItem = {
   itemName: string;
@@ -19,6 +20,7 @@ type CartContextType = {
   clearCart: () => void;
   isOpen: boolean;
   toggleVisibility: () => void;
+  checkout(): void;
 };
 
 const CartContext = createContext<CartContextType>({
@@ -30,6 +32,7 @@ const CartContext = createContext<CartContextType>({
   toggleVisibility: () => {},
   addQuantityToItem: () => {},
   removeQuantityFromItem: () => {},
+  checkout: () => {},
 });
 
 type CartProviderProps = {
@@ -39,6 +42,33 @@ type CartProviderProps = {
 export const CartProvider = ({ children }: CartProviderProps) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+
+  async function checkout() {
+    const items = cartItems.map((item) => ({
+      reference_id: item.itemName,
+      name: item.itemName,
+      quantity: item.quantity,
+      description: item.description,
+      unit_amount: item.price,
+      image_url: item.itemImage,
+    }));
+
+    try {
+      const checkoutObject = {
+        payment_methods: { type: "PIX" },
+        items,
+        reference_id: "testeIdUnico",
+        customer_modifiable: true,
+        additional_amount: 0,
+        redirect_url: "https://erickekarina.netlify.app/",
+        discount_amount: 0,
+      };
+      const response = await createCheckout(checkoutObject);
+      console.log(response);
+    } catch (error) {
+      toast.error("Erro ao criar checkout. Motivo: " + error);
+    }
+  }
 
   const removeQuantityFromItem = (itemName: string) => {
     const newCartItems = cartItems.map((item) => {
@@ -118,6 +148,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         toggleVisibility,
         addQuantityToItem,
         removeQuantityFromItem,
+        checkout,
       }}
     >
       {children}

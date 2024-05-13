@@ -7,6 +7,7 @@ export const Cart = () => {
     cartItems,
     addQuantityToItem,
     removeQuantityFromItem,
+    checkout,
   } = useCart();
 
   const fields = ["Nome", "Imagem", "Quantidade", "Preço"];
@@ -128,7 +129,11 @@ export const Cart = () => {
                     }, 0)
                     .toFixed(2)}
                 </p>
-                <button className="bg-darkbrown text-white p-2 rounded-md hover:bg-darknude hover:text-darkbrown">
+                <button
+                  onClick={checkout}
+                  className="bg-darkbrown text-white p-2 rounded-md hover:bg-darknude 
+                hover:text-darkbrown"
+                >
                   Finalizar
                 </button>
               </div>
