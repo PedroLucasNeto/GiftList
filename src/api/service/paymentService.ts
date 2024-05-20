@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3000';
+const baseURL = 'http://localhost:3000/pagbank-api';
 const headers = {
   accept: 'application/json',
-  'Content-type': 'application/json'
+  'Content-Type': 'application/json'
 };
 
 const axiosInstance = axios.create({
@@ -11,23 +11,25 @@ const axiosInstance = axios.create({
   headers
 });
 
-export async function createCheckout( checkoutObject: any) {
+export async function createCheckout(checkoutObject: any) {
   try {
-    const {data} = await axiosInstance.post("/checkout",checkoutObject);
+    const { data } = await axiosInstance.post(baseURL, checkoutObject);
     return data;
-  } catch (error:any) {
-    throw (`Failed to create checkout: ${error}`);
+  } catch (error: any) {
+    throw new Error(`Failed to create checkout: ${error}`);
   }
 }
 
 export async function getCheckoutInfo(checkoutId: string) {
   try {
-    const {data} = await axiosInstance.get(`/checkouts/${checkoutId}`);
+    const { data } = await axiosInstance.get(`/checkouts/${checkoutId}`);
     return data;
-  } catch (error:any) {
-    throw (`Failed to get checkout info: ${error}`);
+  } catch (error: any) {
+    console.error('Failed to get checkout info:', error);
+    throw new Error(`Failed to get checkout info: ${error.message}`);
   }
 }
+
 
 // IF ERROR: OBJECT ->
 // {

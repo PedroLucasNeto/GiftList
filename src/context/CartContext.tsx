@@ -43,6 +43,32 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
 
+  // async function checkout() {
+  //   const items = cartItems.map((item) => ({
+  //     reference_id: item.itemName,
+  //     name: item.itemName,
+  //     quantity: item.quantity,
+  //     description: item.description,
+  //     unit_amount: item.price,
+  //     image_url: item.itemImage,
+  //   }));
+
+  //   try {
+  //     const checkoutObject = {
+  //       payment_methods: { type: "PIX" },
+  //       items,
+  //       reference_id: "testeIdUnico",
+  //       customer_modifiable: true,
+  //       additional_amount: 0,
+  //       redirect_url: "https://erickekarina.netlify.app/",
+  //       discount_amount: 0,
+  //     };
+  //     const response = await createCheckout(checkoutObject);
+  //     console.log(response);
+  //   } catch (error) {
+  //     toast.error("Erro ao criar checkout. Motivo: " + error);
+  //   }
+  // }
   async function checkout() {
     const items = cartItems.map((item) => ({
       reference_id: item.itemName,
@@ -57,15 +83,17 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       const checkoutObject = {
         payment_methods: { type: "PIX" },
         items,
-        reference_id: "testeIdUnico",
+        reference_id: "uniqueTestId",
         customer_modifiable: true,
         additional_amount: 0,
         redirect_url: "https://erickekarina.netlify.app/",
         discount_amount: 0,
       };
+
       const response = await createCheckout(checkoutObject);
-      console.log(response);
-    } catch (error) {
+      console.log("Checkout created successfully:", response);
+    } catch (error: any) {
+      console.log("UEPA", error);
       toast.error("Erro ao criar checkout. Motivo: " + error);
     }
   }
