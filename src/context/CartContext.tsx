@@ -1,6 +1,7 @@
-import { createContext, useState, useContext, ReactNode } from "react";
-import { toast } from "react-toastify";
-import { createCheckout } from "../api/service/paymentService";
+import { createContext, useState, useContext, ReactNode } from 'react';
+import { toast } from 'react-toastify';
+import { createCheckout } from '../api/service/paymentService';
+import { IUser } from '../types/User';
 
 type CartItem = {
   itemName: string;
@@ -69,32 +70,39 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   //     toast.error("Erro ao criar checkout. Motivo: " + error);
   //   }
   // }
+  function prepareCheckoutObject() {
+    const user: IUser = {
+      name: 'Pedro Lucas dos Santos Neto',
+      cpf: '12039948422',
+    };
+    const totalValue = cartItems
+      .reduce((acc, item) => {
+        return acc + item.price * item.quantity;
+      }, 0)
+      .toFixed(2);
+    return {
+      calendario: {
+        expiracao: 3600,
+      },
+      devedor: {
+        cpf: user.cpf,
+        nome: user.name,
+      },
+      valor: {
+        original: totalValue,
+      },
+      chave: import.meta.env.PIX_KEY,
+      solicitacaoPagador: 'Presente para nosso casamento! <3',
+    };
+  }
   async function checkout() {
-    const items = cartItems.map((item) => ({
-      reference_id: item.itemName,
-      name: item.itemName,
-      quantity: item.quantity,
-      description: item.description,
-      unit_amount: item.price,
-      image_url: item.itemImage,
-    }));
-
     try {
-      const checkoutObject = {
-        payment_methods: { type: "PIX" },
-        items,
-        reference_id: "uniqueTestId",
-        customer_modifiable: true,
-        additional_amount: 0,
-        redirect_url: "https://erickekarina.netlify.app/",
-        discount_amount: 0,
-      };
-
+      const checkoutObject = prepareCheckoutObject();
       const response = await createCheckout(checkoutObject);
-      console.log("Checkout created successfully:", response);
+      console.log('Checkout created successfully:', response);
     } catch (error: any) {
-      console.log("UEPA", error);
-      toast.error("Erro ao criar checkout. Motivo: " + error);
+      console.log('UEPA', error);
+      toast.error('Erro ao criar checkout. Motivo: ' + error);
     }
   }
 
@@ -146,7 +154,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     } else {
       setCartItems([...cartItems, item]);
     }
-    toast.success("Item adicionado ao carrinho");
+    toast.success('Item adicionado ao carrinho');
   };
 
   const removeItemFromCart = (itemName: string) => {
@@ -158,9 +166,9 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   };
 
   const toggleVisibility = () => {
-    const giftsSection = document.getElementById("gifts");
+    const giftsSection = document.getElementById('gifts');
     if (giftsSection) {
-      giftsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      giftsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     setIsOpen((prev) => !prev);
   };

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3000/pagbank-api';
+const baseURL = 'http://localhost:3000/create-charge';
 const headers = {
   accept: 'application/json',
   'Content-Type': 'application/json'
@@ -13,7 +13,7 @@ const axiosInstance = axios.create({
 
 export async function createCheckout(checkoutObject: any) {
   try {
-    const { data } = await axiosInstance.post(baseURL, checkoutObject);
+    const { data } = await axiosInstance.post(`${baseURL}/pix`, checkoutObject);
     return data;
   } catch (error: any) {
     throw new Error(`Failed to create checkout: ${error}`);
