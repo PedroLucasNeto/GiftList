@@ -16,7 +16,7 @@ export async function createCheckout(checkoutObject: any) {
     const { data } = await axiosInstance.post(`${baseURL}/pix`, checkoutObject);
     return data;
   } catch (error: any) {
-    throw new Error(`Failed to create checkout: ${error}`);
+    throw new Error(`A geração do código falhou: ${error.message}`);
   }
 }
 

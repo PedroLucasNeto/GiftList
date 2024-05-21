@@ -1,7 +1,7 @@
-import { createContext, useState, useContext, ReactNode } from 'react';
-import { toast } from 'react-toastify';
-import { createCheckout } from '../api/service/paymentService';
-import { IUser } from '../types/User';
+import { createContext, useState, useContext, ReactNode } from "react";
+import { toast } from "react-toastify";
+import { createCheckout } from "../api/service/paymentService";
+import { IUser } from "../types/User";
 
 type CartItem = {
   itemName: string;
@@ -72,37 +72,38 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   // }
   function prepareCheckoutObject() {
     const user: IUser = {
-      name: 'Pedro Lucas dos Santos Neto',
-      cpf: '12039948422',
+      name: "Pedro Lucas dos Santos Neto",
+      cpf: "12039948422",
     };
-    const totalValue = cartItems
-      .reduce((acc, item) => {
-        return acc + item.price * item.quantity;
-      }, 0)
-      .toFixed(2);
+    const totalValue = cartItems.reduce((acc, item) => {
+      return acc + item.price * item.quantity;
+    }, 0);
+
     return {
       calendario: {
         expiracao: 3600,
       },
       devedor: {
         cpf: user.cpf,
-        nome: user.name,
+        nome: user.name.replace(/D/g, ""),
       },
       valor: {
-        original: totalValue,
+        original: totalValue.toFixed(2),
       },
-      chave: import.meta.env.PIX_KEY,
-      solicitacaoPagador: 'Presente para nosso casamento! <3',
+      chave: "6130a628-7c33-45dd-9135-eca7b75fc138",
+      solicitacaoPagador: "Presente para nosso casamento! <3",
     };
   }
   async function checkout() {
     try {
       const checkoutObject = prepareCheckoutObject();
       const response = await createCheckout(checkoutObject);
-      console.log('Checkout created successfully:', response);
+      if (response) {
+        toast.success("Seu código foi gerado com sucesso!");
+        console.log(response);
+      }
     } catch (error: any) {
-      console.log('UEPA', error);
-      toast.error('Erro ao criar checkout. Motivo: ' + error);
+      toast.error(error.toString());
     }
   }
 
@@ -154,7 +155,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     } else {
       setCartItems([...cartItems, item]);
     }
-    toast.success('Item adicionado ao carrinho');
+    toast.success("Item adicionado ao carrinho");
   };
 
   const removeItemFromCart = (itemName: string) => {
@@ -166,9 +167,9 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   };
 
   const toggleVisibility = () => {
-    const giftsSection = document.getElementById('gifts');
+    const giftsSection = document.getElementById("gifts");
     if (giftsSection) {
-      giftsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      giftsSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
     setIsOpen((prev) => !prev);
   };
