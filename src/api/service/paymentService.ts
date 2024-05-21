@@ -11,10 +11,10 @@ const axiosInstance = axios.create({
   headers
 });
 
-export async function createCheckout(checkoutObject: any) {
+export async function createPixData(pixObject: any) {
   try {
-    const { data } = await axiosInstance.post(`${baseURL}/pix`, checkoutObject);
-    return data;
+    const response = await axiosInstance.post(`${baseURL}/pix`, pixObject);
+    return response;
   } catch (error: any) {
     throw new Error(`A geração do código falhou: ${error.message}`);
   }

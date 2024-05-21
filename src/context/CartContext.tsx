@@ -1,6 +1,6 @@
 import { createContext, useState, useContext, ReactNode } from "react";
 import { toast } from "react-toastify";
-import { createCheckout } from "../api/service/paymentService";
+import { createPixData } from "../api/service/paymentService";
 import { IUser } from "../types/User";
 
 type CartItem = {
@@ -12,6 +12,14 @@ type CartItem = {
   quantity: number;
 };
 
+type QRCode = {
+  txid: string;
+  calendar: any;
+  total: string;
+  qrCodeImage: string;
+  pixKey: string;
+};
+
 type CartContextType = {
   cartItems: CartItem[];
   addItemToCart: (item: CartItem) => void;
@@ -21,7 +29,10 @@ type CartContextType = {
   clearCart: () => void;
   isOpen: boolean;
   toggleVisibility: () => void;
-  checkout(): void;
+  createPix(): void;
+  qrCodeData: QRCode;
+  modalPaymentIsOpen: boolean;
+  isLoading: boolean;
 };
 
 const CartContext = createContext<CartContextType>({
@@ -33,7 +44,16 @@ const CartContext = createContext<CartContextType>({
   toggleVisibility: () => {},
   addQuantityToItem: () => {},
   removeQuantityFromItem: () => {},
-  checkout: () => {},
+  createPix: () => {},
+  qrCodeData: {
+    txid: "",
+    calendar: {},
+    total: "",
+    qrCodeImage: "",
+    pixKey: "",
+  },
+  isLoading: false,
+  modalPaymentIsOpen: false,
 });
 
 type CartProviderProps = {
@@ -43,34 +63,17 @@ type CartProviderProps = {
 export const CartProvider = ({ children }: CartProviderProps) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [modalPaymentIsOpen, setModalPaymentIsOpen] = useState(false);
+  const [qrCodeData, setQrCodeData] = useState<QRCode>({
+    txid: "",
+    calendar: {},
+    total: "",
+    qrCodeImage: "",
+    pixKey: "",
+  });
 
-  // async function checkout() {
-  //   const items = cartItems.map((item) => ({
-  //     reference_id: item.itemName,
-  //     name: item.itemName,
-  //     quantity: item.quantity,
-  //     description: item.description,
-  //     unit_amount: item.price,
-  //     image_url: item.itemImage,
-  //   }));
-
-  //   try {
-  //     const checkoutObject = {
-  //       payment_methods: { type: "PIX" },
-  //       items,
-  //       reference_id: "testeIdUnico",
-  //       customer_modifiable: true,
-  //       additional_amount: 0,
-  //       redirect_url: "https://erickekarina.netlify.app/",
-  //       discount_amount: 0,
-  //     };
-  //     const response = await createCheckout(checkoutObject);
-  //     console.log(response);
-  //   } catch (error) {
-  //     toast.error("Erro ao criar checkout. Motivo: " + error);
-  //   }
-  // }
-  function prepareCheckoutObject() {
+  function preparePixObject() {
     const user: IUser = {
       name: "Pedro Lucas dos Santos Neto",
       cpf: "12039948422",
@@ -81,7 +84,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
     return {
       calendario: {
-        expiracao: 3600,
+        expiracao: 600,
       },
       devedor: {
         cpf: user.cpf,
@@ -94,16 +97,23 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       solicitacaoPagador: "Presente para nosso casamento! <3",
     };
   }
-  async function checkout() {
+
+  async function createPix() {
     try {
-      const checkoutObject = prepareCheckoutObject();
-      const response = await createCheckout(checkoutObject);
-      if (response) {
-        toast.success("Seu código foi gerado com sucesso!");
-        console.log(response);
+      setIsLoading(() => true);
+      const pixObject = preparePixObject();
+      const { data } = await createPixData(pixObject);
+      if (data) {
+        clearCart();
+        const qrCodeData = { ...data };
+        setQrCodeData(() => qrCodeData);
+        toggleVisibility();
+        setModalPaymentIsOpen(() => true);
       }
     } catch (error: any) {
       toast.error(error.toString());
+    } finally {
+      setIsLoading(() => false);
     }
   }
 
@@ -185,7 +195,10 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         toggleVisibility,
         addQuantityToItem,
         removeQuantityFromItem,
-        checkout,
+        createPix,
+        qrCodeData,
+        modalPaymentIsOpen,
+        isLoading,
       }}
     >
       {children}

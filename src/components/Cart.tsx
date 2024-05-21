@@ -1,4 +1,5 @@
 import { useCart } from "../context/CartContext";
+import { RotatingLines } from "react-loader-spinner";
 
 export const Cart = () => {
   const {
@@ -7,7 +8,8 @@ export const Cart = () => {
     cartItems,
     addQuantityToItem,
     removeQuantityFromItem,
-    checkout,
+    createPix,
+    isLoading,
   } = useCart();
 
   const fields = ["Nome", "Imagem", "Quantidade", "Preço"];
@@ -130,7 +132,7 @@ export const Cart = () => {
                     .toFixed(2)}
                 </p>
                 <button
-                  onClick={checkout}
+                  onClick={createPix}
                   className="bg-darkbrown text-white p-2 rounded-md hover:bg-darknude 
                 hover:text-darkbrown"
                 >
@@ -141,6 +143,21 @@ export const Cart = () => {
           )}
         </div>
       </div>
+      {isLoading && (
+        <div
+          className={`  ${
+            isLoading ? "flex flex-col items-center" : "hidden"
+          } center inset-0 overflow-y-auto`}
+        >
+          <RotatingLines
+            strokeColor="black"
+            strokeWidth="5"
+            animationDuration="0.75"
+            width="96"
+            visible={true}
+          />
+        </div>
+      )}
     </div>
   );
 };
