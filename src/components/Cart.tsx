@@ -18,16 +18,18 @@ export const Cart = () => {
     <div
       id="cart-modal"
       className={`  ${
-        isOpen ? "flex flex-col items-center" : "hidden"
+        isOpen
+          ? "flex flex-col items-center align-center justify-center content-center"
+          : "hidden"
       } fixed inset-0 overflow-y-auto`}
     >
-      <div className="flex items-center justify-center px-4 text-center sm:block sm:p-0">
+      <div className="w-full md:w-[600px] flex items-center justify-center px-4 text-center sm:block sm:p-0">
         <div className="fixed inset-0 transition-opacity">
           <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
         </div>
         {/* CART CONTAINER */}
-        <div className="w-full h-full m-4 mt-16 sm:mt-8 bg-white rounded-lg overflow-hidden shadow-xl transform transition-all  sm:min-w-lg sm:w-full lg:w-[600px]">
-          <div className="w-full bg-gray-50 px-4 py-3 sm:px-6">
+        <div className=" h-full m-4 mt-16 sm:mt-8 bg-white rounded-lg overflow-hidden shadow-xl transform transition-all  ">
+          <div className=" bg-gray-50 px-4 py-3 sm:px-6">
             {/* CART HEADER */}
             <header className="flex justify-between">
               <h3 className="text-lg font-medium leading-6 text-gray-900">
@@ -42,8 +44,8 @@ export const Cart = () => {
               </button>
             </header>
           </div>
-          <div className="overflow-y-scroll overflow-x-hidden w-full">
-            <table className="w-full">
+          <div className="overflow-y-scroll overflow-x-scroll w-full py-4">
+            <table className="w-full h-full">
               <thead>
                 <tr className="border-b border-gray-200">
                   {/* TABLE HEAD */}
@@ -69,11 +71,11 @@ export const Cart = () => {
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                           {item.itemName}
                         </td>
-                        <td className="py-4">
+                        <td className="py-4 w-fit flex justify-center w-full">
                           <img
                             src={item.itemImage}
                             alt={item.itemName}
-                            className="rounded-full h-10 w-10 sm:h-16 sm:w-16"
+                            className="rounded-full h-10 w-10 sm:h-16 sm:w-16 self-center"
                           />
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
@@ -120,7 +122,7 @@ export const Cart = () => {
           </div>
           {/* TOTAL */}
           {cartItems.length > 0 && (
-            <div className="bg-gray-50 px-4 py-3 sm:px-6 w-full">
+            <div className="bg-gray-50 px-4 py-4 sm:px-6 w-full fixed bottom-0 ">
               <div className="flex justify-between">
                 <p className="text-sm text-gray-600">Total</p>
                 <p className="text-sm text-gray-900">
@@ -146,8 +148,10 @@ export const Cart = () => {
       {isLoading && (
         <div
           className={`  ${
-            isLoading ? "flex flex-col items-center" : "hidden"
-          } center inset-0 overflow-y-auto`}
+            isLoading
+              ? "flex flex-col items-center align-center justify-center content-center"
+              : "hidden"
+          } center inset-0 overflow-y-auto w-full h-full bg-gray-500 bg-opacity-50 fixed z-50`}
         >
           <RotatingLines
             strokeColor="black"

@@ -10,7 +10,7 @@ const GiftList = () => {
       itemName: "Item 1",
       itemImage: "https://picsum.photos/id/15/2500/1667",
       description: "lorem ipsum test",
-      price: 100,
+      price: 50,
       descriptionLeft: false,
     },
     {
@@ -24,7 +24,7 @@ const GiftList = () => {
       itemName: "Item 3",
       itemImage: "https://picsum.photos/id/18/2500/1667",
       description: "lorem ipsum test",
-      price: 100,
+      price: 150,
       descriptionLeft: false,
     },
   ];

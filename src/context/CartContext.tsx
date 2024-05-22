@@ -1,7 +1,7 @@
 import { createContext, useState, useContext, ReactNode } from "react";
 import { toast } from "react-toastify";
 import { createPixData } from "../api/service/paymentService";
-import { IUser } from "../types/User";
+// import { IUser } from "../types/User";
 
 type CartItem = {
   itemName: string;
@@ -33,6 +33,7 @@ type CartContextType = {
   qrCodeData: QRCode;
   modalPaymentIsOpen: boolean;
   isLoading: boolean;
+  togglePaymentModal: () => void;
 };
 
 const CartContext = createContext<CartContextType>({
@@ -54,6 +55,7 @@ const CartContext = createContext<CartContextType>({
   },
   isLoading: false,
   modalPaymentIsOpen: false,
+  togglePaymentModal: () => {},
 });
 
 type CartProviderProps = {
@@ -74,10 +76,10 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   });
 
   function preparePixObject() {
-    const user: IUser = {
-      name: "Pedro Lucas dos Santos Neto",
-      cpf: "12039948422",
-    };
+    // const user: IUser = {
+    //   name: "Pedro Lucas dos Santos Neto",
+    //   cpf: "12039948422",
+    // };
     const totalValue = cartItems.reduce((acc, item) => {
       return acc + item.price * item.quantity;
     }, 0);
@@ -85,10 +87,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     return {
       calendario: {
         expiracao: 600,
-      },
-      devedor: {
-        cpf: user.cpf,
-        nome: user.name.replace(/D/g, ""),
       },
       valor: {
         original: totalValue.toFixed(2),
@@ -184,6 +182,14 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     setIsOpen((prev) => !prev);
   };
 
+  const togglePaymentModal = () => {
+    const giftsSection = document.getElementById("gifts");
+    if (giftsSection) {
+      giftsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setModalPaymentIsOpen((prev) => !prev);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -199,6 +205,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         qrCodeData,
         modalPaymentIsOpen,
         isLoading,
+        togglePaymentModal,
       }}
     >
       {children}

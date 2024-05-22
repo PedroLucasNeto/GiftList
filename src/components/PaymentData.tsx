@@ -3,7 +3,7 @@ import { useCart } from "../context/CartContext";
 import { toast } from "react-toastify";
 
 export const PaymentData = () => {
-  const { qrCodeData, modalPaymentIsOpen } = useCart();
+  const { qrCodeData, modalPaymentIsOpen, togglePaymentModal } = useCart();
   const [timeLeft, setTimeLeft] = useState(0);
 
   useEffect(() => {
@@ -73,7 +73,10 @@ export const PaymentData = () => {
         <p>
           Valor do presente: <label>R$ {qrCodeData.total}</label>
         </p>
-        <button className="bg-darkblue text-white p-2 rounded mt-4">
+        <button
+          className="bg-darkblue text-white p-2 rounded mt-4"
+          onClick={togglePaymentModal}
+        >
           Cancelar
         </button>
       </div>
