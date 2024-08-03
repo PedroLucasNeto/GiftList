@@ -14,7 +14,7 @@ type CartItem = {
 
 type QRCode = {
   txid: string;
-  calendar: unknown;
+  calendar: any;
   total: string;
   qrCodeImage: string;
   pixKey: string;
