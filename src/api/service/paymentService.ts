@@ -1,14 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
 
-const baseURL = 'http://localhost:3000/create-charge';
+const baseURL = "https://efi-payments.vercel.app/create-charge";
 const headers = {
-  accept: 'application/json',
-  'Content-Type': 'application/json'
+  accept: "application/json",
+  "Content-Type": "application/json",
 };
 
 const axiosInstance = axios.create({
   baseURL,
-  headers
+  headers,
 });
 
 export async function createPixData(pixObject: any) {
@@ -25,11 +25,10 @@ export async function getCheckoutInfo(checkoutId: string) {
     const { data } = await axiosInstance.get(`/checkouts/${checkoutId}`);
     return data;
   } catch (error: any) {
-    console.error('Failed to get checkout info:', error);
+    console.error("Failed to get checkout info:", error);
     throw new Error(`Failed to get checkout info: ${error.message}`);
   }
 }
-
 
 // IF ERROR: OBJECT ->
 // {

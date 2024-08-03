@@ -14,7 +14,7 @@ type CartItem = {
 
 type QRCode = {
   txid: string;
-  calendar: any;
+  calendar: unknown;
   total: string;
   qrCodeImage: string;
   pixKey: string;
@@ -76,10 +76,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   });
 
   function preparePixObject() {
-    // const user: IUser = {
-    //   name: "Pedro Lucas dos Santos Neto",
-    //   cpf: "12039948422",
-    // };
     const totalValue = cartItems.reduce((acc, item) => {
       return acc + item.price * item.quantity;
     }, 0);
