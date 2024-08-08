@@ -15,13 +15,13 @@ export const PaymentData = () => {
       const updateTimeLeft = () => {
         const currentTimeInSeconds = new Date().getTime() / 1000;
         const timeRemaining = expirationDateInSeconds - currentTimeInSeconds;
-        setTimeLeft(Math.max(timeRemaining, 0)); // Ensure timeLeft is not negative
+        setTimeLeft(Math.max(timeRemaining, 0));
       };
 
       updateTimeLeft();
-      const intervalId = setInterval(updateTimeLeft, 1000); // Update every second
+      const intervalId = setInterval(updateTimeLeft, 1000);
 
-      return () => clearInterval(intervalId); // Cleanup interval on unmount
+      return () => clearInterval(intervalId);
     }
   }, [qrCodeData]);
 
