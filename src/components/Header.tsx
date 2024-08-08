@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react";
+import {
+  HomeIcon,
+  HeartIcon,
+  GiftIcon,
+  EnvelopeIcon,
+} from "@heroicons/react/24/outline";
 
 const Header = () => {
   const links = [
-    { href: "#", text: "Início" },
-    { href: "#our-story", text: "Nossa História" },
-    { href: "#gifts", text: "Lista de Presentes" },
-    { href: "#contact", text: "Recados" },
+    { href: "#", text: "Início", icon: HomeIcon },
+    { href: "#our-story", text: "Nossa História", icon: HeartIcon },
+    { href: "#gifts", text: "Lista de Presentes", icon: GiftIcon },
+    { href: "#contact", text: "Recados", icon: EnvelopeIcon },
   ];
 
   const [isMobile, setIsMobile] = useState(false);
@@ -53,14 +59,17 @@ const Header = () => {
               </label>
             </div>
           ) : (
-            <ul className="flex flex-wrap gap-8 m-0 font-semibold">
+            <ul className="flex flex-wrap gap-8 m-0 font-semibold ">
               {links.map((link) => (
                 <li key={link.text}>
                   <a
                     href={link.href}
                     className="focus:no-underline hover:no-underline text-white 
-                    text-sm lg:text-lg hover:text-gray-200 focus:text-gray-900"
+                    text-sm lg:text-lg hover:text-gray-200 focus:text-gray-900 flex justify-center text-center items-center"
                   >
+                    {link.icon && (
+                      <link.icon className="w-6 inline-block mr-2" />
+                    )}
                     {link.text}
                   </a>
                 </li>
@@ -81,10 +90,12 @@ const Header = () => {
           {links.map((link) => (
             <li key={link.text}>
               <a
+                onClick={toggleMenu}
                 href={link.href}
                 className="focus:no-underline hover:no-underline text-white
                  text-sm lg:text-lg hover:text-gray-200 focus:text-gray-900 font-bold"
               >
+                {link.icon && <link.icon className="w-6 inline-block mr-2" />}
                 {link.text}
               </a>
             </li>

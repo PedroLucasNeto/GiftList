@@ -1,6 +1,5 @@
 import { BackToTop } from "../components/BackToTop";
 import { Cart } from "../components/Cart";
-import { Footer } from "../components/Footer";
 import { PaymentData } from "../components/PaymentData";
 import { CartProvider } from "../context/CartContext";
 import Contact from "./Home/components/Contact/Contact";
@@ -25,7 +24,6 @@ const Home = () => {
         <BackToTop />
         <Cart />
         <PaymentData />
-        <Footer />
       </div>
     </CartProvider>
   );
